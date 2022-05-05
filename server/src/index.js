@@ -9,7 +9,7 @@ app.use(cors());
 app.use(express.json());
 
 //ROUTES
-app.use("/", require("./routes/route.js"));
+app.use("/", require("./routes"));
 
 // run server
 app.listen(CONSTANTS.SERVER_PORT, () => {

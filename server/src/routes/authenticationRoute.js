@@ -54,7 +54,7 @@ exports.login = async (req, res) => {
       [email]
     );
 
-    console.log(user);
+    // console.log(user);
 
     if (user.rowCount == 0) {
       return res.status(401).json({
@@ -87,22 +87,5 @@ exports.login = async (req, res) => {
       success: false,
       message: "Server Error",
     });
-  }
-};
-
-// Home
-exports.home = async (req, res) => {
-  try {
-    const user = await pool.query(
-      "SELECT u_name FROM sim_users WHERE id = $1",
-      [req.user.id]
-    );
-    res.status(200).json({
-      success: true,
-      message: `Welcome ${user.rows[0].u_name}!`,
-    });
-  } catch (err) {
-    console.error(err.message);
-    res.status(500).send("Server error");
   }
 };

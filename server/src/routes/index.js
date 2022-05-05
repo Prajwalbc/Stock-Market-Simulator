@@ -4,7 +4,8 @@ const router = express.Router();
 const { authorize } = require("../middlewares/authorize.js");
 const validInfo = require("../middlewares/validInfo.js");
 
-const { register, login, home } = require("./controller.js");
+const { register, login } = require("./authenticationRoute.js");
+const { home } = require("./homeRoute.js");
 
 // Home
 router.route("/home").get(authorize, home);
