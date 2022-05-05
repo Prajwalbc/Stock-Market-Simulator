@@ -1,5 +1,10 @@
 -- CREATE DATABASE stock_sim;
 
+-- SELECT * FROM sim_users;
+-- SELECT * FROM sim_transactions;
+-- SELECT * FROM sim_portfolios;
+-- SELECT * FROM sim_watchlists;
+
 -- create users table
 CREATE TABLE sim_users (
   id SERIAL PRIMARY KEY NOT NULL,
