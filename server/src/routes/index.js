@@ -8,7 +8,7 @@ const { verify, register, login } = require("./authenticationRoute.js");
 const { home } = require("./homeRoute.js");
 
 // Verify
-router.route("/verify").get(authorize, verify);
+router.route("/auth/verify").get(authorize, verify);
 
 // Home
 router.route("/home").get(authorize, home);
