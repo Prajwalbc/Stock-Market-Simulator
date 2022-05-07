@@ -4,6 +4,16 @@ const bcrypt = require("bcrypt");
 const { jwtGenerator } = require("../utils/jwtGenerator.js");
 const CONSTANTS = require("../utils/constants.js");
 
+// Verify
+exports.verify = async (req, res) => {
+  try {
+    res.status(200).json({ isAuthorized: true });
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).send("Server error");
+  }
+};
+
 // Register
 exports.register = async (req, res) => {
   try {
