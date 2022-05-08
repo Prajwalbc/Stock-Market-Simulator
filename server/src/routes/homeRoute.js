@@ -9,7 +9,7 @@ exports.home = async (req, res) => {
     );
     res.status(200).json({
       success: true,
-      message: `Welcome ${user.rows[0].u_name}!`,
+      username: `${user.rows[0].u_name}!`,
     });
   } catch (err) {
     console.error(err.message);

@@ -7,7 +7,17 @@ const CONSTANTS = require("../utils/constants.js");
 // Verify
 exports.verify = async (req, res) => {
   try {
-    res.status(200).json({ isAuthorized: true });
+    // console.log(req.user.id);
+    const userName = await pool.query(
+      "SELECT u_name FROM sim_users WHERE id = $1",
+      [req.user.id]
+    );
+    // console.log(userName.rows[0].u_name);
+
+    res.status(200).json({
+      isAuthorized: true,
+      userName: userName.rows[0].u_name,
+    });
   } catch (err) {
     console.error(err.message);
     res.status(500).send("Server error");
@@ -25,7 +35,7 @@ exports.register = async (req, res) => {
     );
 
     if (isNewUser.rowCount !== 0) {
-      return res.status(401).json({
+      return res.json({
         success: false,
         message: "User already exists",
       });
@@ -67,7 +77,7 @@ exports.login = async (req, res) => {
     // console.log(user);
 
     if (user.rowCount == 0) {
-      return res.status(401).json({
+      return res.json({
         success: false,
         message: "Invalid Credential",
       });
@@ -79,7 +89,7 @@ exports.login = async (req, res) => {
     );
 
     if (!validPassword) {
-      return res.status(401).json({
+      return res.json({
         success: false,
         message: "Invalid Credential",
       });

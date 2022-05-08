@@ -9,7 +9,10 @@ exports.authorize = (req, res, next) => {
 
   // Check if not token
   if (!token) {
-    return res.status(403).json({ msg: "authorization denied" });
+    return res.json({
+      success: false,
+      message: "authorization denied",
+    });
   }
 
   // Verify token
@@ -19,6 +22,10 @@ exports.authorize = (req, res, next) => {
     req.user = verify.user;
     next();
   } catch (err) {
-    res.status(401).json({ msg: "Token is not valid" });
+    console.log(err.message);
+    res.json({
+      success: false,
+      message: "Token is not valid",
+    });
   }
 };
