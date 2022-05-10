@@ -1,12 +1,12 @@
 /* Header Styling */
 .header-container {
-  background-color: #1d1d26;
+  /* background: linear-gradient(to right, rgb(224, 22, 100), rgb(247, 127, 72)); */
+  background: rgb(10, 10, 18);
   display: flex;
   justify-content: space-around;
-  padding: 1rem;
-  /* height: 10vh; */
+  padding: 2rem;
 }
-.logo {
+.header-logo {
   color: white;
   font-size: 32px;
 }
@@ -25,10 +25,20 @@
   padding: 3px 10px;
 }
 
+.header-link-selected {
+  border: 2.5px solid white !important;
+  background: linear-gradient(
+    to right,
+    rgb(224, 22, 100),
+    rgb(247, 127, 72)
+  ) !important;
+}
+
 /* Home Styling */
 .home-container {
   height: 100vh;
-  background-color: #1d1d26;
+  /* background-color: #1d1d26; */
+  background: rgb(10, 10, 18);
   display: flex;
   align-items: center;
   justify-content: center;

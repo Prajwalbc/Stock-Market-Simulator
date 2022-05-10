@@ -66,7 +66,8 @@ const RegisterContent = () => {
           </Link>
         </div>
       </div>
-      <div>
+
+      {/* <div>
         <h1 className="">Register Page</h1>
         <form onSubmit={onSubmitForm}>
           <input
@@ -97,6 +98,58 @@ const RegisterContent = () => {
           />
 
           <button className="">Submit</button>
+        </form>
+      </div> */}
+
+      <div className="login-body">
+        <div className="figures">
+          <div id="pink-circle"></div>
+          <div id="black-circle"></div>
+        </div>
+
+        <form onSubmit={onSubmitForm}>
+          <div className="main-body">
+            <center>
+              <h1 className="log-title">Register.</h1>
+            </center>
+
+            <input
+              type="text"
+              name="name"
+              value={name}
+              placeholder="Name"
+              onChange={(e) => onChange(e)}
+              className="reg-log-ip"
+            />
+
+            <input
+              type="text"
+              name="email"
+              value={email}
+              placeholder="Email"
+              onChange={(e) => onChange(e)}
+              className="reg-log-ip"
+            />
+
+            <input
+              type="password"
+              name="password"
+              value={password}
+              placeholder="Password"
+              onChange={(e) => onChange(e)}
+              className="reg-log-ip"
+            />
+
+            <button className="reg-log-btn">Register</button>
+
+            <span className="spn">
+              Already have an account?
+              <Link to={ROUTES.REGISTER} style={{ color: "white" }}>
+                &nbsp; LogIn
+              </Link>
+              <br />
+            </span>
+          </div>
         </form>
       </div>
     </>

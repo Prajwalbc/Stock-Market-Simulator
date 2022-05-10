@@ -66,27 +66,45 @@ function LoginContent() {
         </div>
       </div>
 
-      <div>
-        <h1 className="">Login Page</h1>
+      <div className="login-body">
+        <div className="figures">
+          <div id="pink-circle"></div>
+          <div id="black-circle"></div>
+        </div>
+
         <form onSubmit={onSubmitForm}>
-          <input
-            type="text"
-            name="email"
-            placeholder="email"
-            value={email}
-            onChange={(e) => onChange(e)}
-            className=""
-          />
-          <input
-            type="password"
-            name="password"
-            placeholder="password"
-            autoComplete="false"
-            value={password}
-            onChange={(e) => onChange(e)}
-            className=""
-          />
-          <button className="">Register</button>
+          <div className="main-body">
+            <center>
+              <h1 className="log-title">Log in.</h1>
+            </center>
+
+            <input
+              type="text"
+              name="email"
+              placeholder="Email"
+              value={email}
+              onChange={(e) => onChange(e)}
+              className="reg-log-ip"
+            />
+            <input
+              type="password"
+              name="password"
+              placeholder="Password"
+              autoComplete="false"
+              value={password}
+              onChange={(e) => onChange(e)}
+              className="reg-log-ip"
+            />
+            <button className="reg-log-btn">Log in</button>
+
+            <span className="spn">
+              Don't have an account?
+              <Link to={ROUTES.REGISTER} style={{ color: "white" }}>
+                &nbsp; Register
+              </Link>
+              <br />
+            </span>
+          </div>
         </form>
       </div>
     </>

@@ -9,7 +9,7 @@ function HomeContent() {
   return (
     <>
       <div className="header-container">
-        <div className="logo">Stock Market Simulator</div>
+        <div className="header-logo">Stock Market Simulator</div>
         <div className="header-links">
           <Link to={ROUTES.REGISTER} className="header-link">
             Register
@@ -27,7 +27,7 @@ function HomeContent() {
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro autem
             quae
           </h5>
-          <Link to={ROUTES.LOGIN} className="home-Link">
+          <Link to={ROUTES.LOGIN} className="reg-log-btn">
             Learn More
           </Link>
         </div>
