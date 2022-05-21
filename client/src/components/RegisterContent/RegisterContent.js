@@ -67,40 +67,6 @@ const RegisterContent = () => {
         </div>
       </div>
 
-      {/* <div>
-        <h1 className="">Register Page</h1>
-        <form onSubmit={onSubmitForm}>
-          <input
-            type="text"
-            name="name"
-            value={name}
-            placeholder="name"
-            onChange={(e) => onChange(e)}
-            className=""
-          />
-
-          <input
-            type="text"
-            name="email"
-            value={email}
-            placeholder="email"
-            onChange={(e) => onChange(e)}
-            className=""
-          />
-
-          <input
-            type="password"
-            name="password"
-            value={password}
-            placeholder="password"
-            onChange={(e) => onChange(e)}
-            className=""
-          />
-
-          <button className="">Submit</button>
-        </form>
-      </div> */}
-
       <div className="login-body">
         <div className="figures">
           <div id="pink-circle"></div>
@@ -144,7 +110,7 @@ const RegisterContent = () => {
 
             <span className="spn">
               Already have an account?
-              <Link to={ROUTES.REGISTER} style={{ color: "white" }}>
+              <Link to={ROUTES.LOGIN} style={{ color: "white" }}>
                 &nbsp; LogIn
               </Link>
               <br />
