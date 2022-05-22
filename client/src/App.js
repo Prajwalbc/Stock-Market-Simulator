@@ -1,20 +1,24 @@
 import React, { useState, useEffect } from "react";
-import {
-  BrowserRouter as Router,
-  Route,
-  Routes,
-  Navigate,
-} from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 // Context
 import AuthContext from "./context/AuthContext";
+import SearchScripInfoContext from "./context/SearchScripInfoContext";
 
 // Routes
 import { ROUTES } from "./constants";
 import { ProtectedRoute, IsUserRedirect } from "./routes/routes";
 
 // Pages
-import { NotFound, Home, Register, Login, StockSimulator } from "./Pages";
+import {
+  NotFound,
+  Home,
+  Register,
+  Login,
+  StockSimulator,
+  StockScreenPage,
+  Watchlist,
+} from "./Pages";
 
 const axios = require("axios").default;
 
@@ -49,6 +53,7 @@ function App() {
 
   return (
     <AuthContext.Provider value={{ user, setUser, checkVerification }}>
+      <SearchScripInfoContext.Provider value={{ scripInfo, setScripInfo }}>
         <Router>
           <Routes>
             <Route
@@ -60,7 +65,6 @@ function App() {
                 </IsUserRedirect>
               }
             />
-
             <Route
               exact
               path={ROUTES.REGISTER}
@@ -70,7 +74,6 @@ function App() {
                 </IsUserRedirect>
               }
             />
-
             <Route
               exact
               path={ROUTES.LOGIN}
@@ -111,6 +114,7 @@ function App() {
             <Route exact path={ROUTES.NOTFOUND} element={<NotFound />} />
           </Routes>
         </Router>
+      </SearchScripInfoContext.Provider>
     </AuthContext.Provider>
   );
 }
