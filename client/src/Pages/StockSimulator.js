@@ -25,6 +25,7 @@ const StockSimulator = () => {
     e.preventDefault();
     try {
       localStorage.removeItem("jwtToken");
+      sessionStorage.clear();
       navigate("/");
       setUser({ isAuthorized: false, userName: "" });
       console.log("Logout successfully");
@@ -36,9 +37,11 @@ const StockSimulator = () => {
 
   const getScripInfo = async (e) => {
     e.preventDefault();
+
+    if (scripName === "") return console.log("Enter Stock name");
+
     try {
       const parsedScripName = scripName.replace(/ /g, "_");
-      console.log(parsedScripName);
       const response = axios.get(
         `http://localhost:4000/ss/ws/${parsedScripName}`,
         {
@@ -47,7 +50,9 @@ const StockSimulator = () => {
       );
       const parseRes = (await response).data;
       if (parseRes.success === false) {
-        console.log(parseRes);
+        console.log(parseRes.message, " Enter valid stock name");
+        setScripName("");
+        setScripInfo([]);
         return;
       } else {
         setScripInfo(parseRes.scripInfo);
