@@ -11,6 +11,7 @@ import AuthContext from "./context/AuthContext";
 
 // Routes
 import { ROUTES } from "./constants";
+import { ProtectedRoute, IsUserRedirect } from "./routes/routes";
 
 // Pages
 import { NotFound, Home, Register, Login, StockSimulator } from "./Pages";
@@ -48,59 +49,68 @@ function App() {
 
   return (
     <AuthContext.Provider value={{ user, setUser, checkVerification }}>
-      <Router>
-        <Routes>
-          <Route
-            exact
-            path={ROUTES.HOME}
-            element={
-              !user.isAuthorized ? (
-                <Home />
-              ) : (
-                <Navigate to={ROUTES.STOCKSIMULATOR} />
-              )
-            }
-          />
+        <Router>
+          <Routes>
+            <Route
+              exact
+              path={ROUTES.HOME}
+              element={
+                <IsUserRedirect user={user}>
+                  <Home />
+                </IsUserRedirect>
+              }
+            />
 
-          <Route
-            exact
-            path={ROUTES.REGISTER}
-            element={
-              !user.isAuthorized ? (
-                <Register />
-              ) : (
-                <Navigate to={ROUTES.STOCKSIMULATOR} />
-              )
-            }
-          />
+            <Route
+              exact
+              path={ROUTES.REGISTER}
+              element={
+                <IsUserRedirect user={user}>
+                  <Register />
+                </IsUserRedirect>
+              }
+            />
 
-          <Route
-            exact
-            path={ROUTES.LOGIN}
-            element={
-              !user.isAuthorized ? (
-                <Login />
-              ) : (
-                <Navigate to={ROUTES.STOCKSIMULATOR} />
-              )
-            }
-          />
+            <Route
+              exact
+              path={ROUTES.LOGIN}
+              element={
+                <IsUserRedirect user={user}>
+                  <Login />
+                </IsUserRedirect>
+              }
+            />
 
-          <Route
-            exact
-            path={ROUTES.STOCKSIMULATOR}
-            element={
-              user.isAuthorized ? (
-                <StockSimulator />
-              ) : (
-                <Navigate to={ROUTES.HOME} />
-              )
-            }
-          />
-
-          <Route path={ROUTES.NOTFOUND} element={<NotFound />} />
-        </Routes>
-      </Router>
+            <Route
+              exact
+              path={ROUTES.STOCKSIMULATOR}
+              element={
+                <ProtectedRoute user={user}>
+                  <StockSimulator />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              exact
+              path={ROUTES.SEARCHSCRIPINFO}
+              element={
+                <ProtectedRoute user={user}>
+                  <StockScreenPage />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              exact
+              path={ROUTES.WATCHLIST}
+              element={
+                <ProtectedRoute user={user}>
+                  <Watchlist />
+                </ProtectedRoute>
+              }
+            />
+            <Route exact path={ROUTES.NOTFOUND} element={<NotFound />} />
+          </Routes>
+        </Router>
     </AuthContext.Provider>
   );
 }
