@@ -1,13 +1,25 @@
-import React, { useContext } from "react";
-import { useNavigate } from "react-router-dom";
+import React, { useContext, useState } from "react";
+import { useNavigate, Link } from "react-router-dom";
 // import { toast } from "react-toastify";
 
 import AuthContext from "../context/AuthContext";
+import SearchScripInfoContext from "../context/SearchScripInfoContext";
+
+import { ROUTES } from "../constants";
+
+const axios = require("axios").default;
 
 const StockSimulator = () => {
   const { user, setUser } = useContext(AuthContext);
+  const { setScripInfo } = useContext(SearchScripInfoContext);
 
   const navigate = useNavigate();
+
+  const [scripName, setScripName] = useState("");
+
+  const onChange = (e) => {
+    setScripName(e.target.value);
+  };
 
   const logout = (e) => {
     e.preventDefault();
@@ -22,17 +34,65 @@ const StockSimulator = () => {
     }
   };
 
+  const getScripInfo = async (e) => {
+    e.preventDefault();
+    try {
+      const parsedScripName = scripName.replace(/ /g, "_");
+      console.log(parsedScripName);
+      const response = axios.get(
+        `http://localhost:4000/ss/ws/${parsedScripName}`,
+        {
+          headers: { jwt_token: localStorage.jwtToken },
+        }
+      );
+      const parseRes = (await response).data;
+      if (parseRes.success === false) {
+        console.log(parseRes);
+        return;
+      } else {
+        setScripInfo(parseRes.scripInfo);
+        sessionStorage.setItem(
+          "currentSripName",
+          parseRes.scripInfo[0].scripName
+        );
+        navigate(ROUTES.SEARCHSCRIPINFO.replace(":scripname", parsedScripName));
+        // console.log(parseRes);
+      }
+    } catch (err) {
+      console.log(err.message);
+      setScripName("");
+    }
+  };
+
   return (
-    <div>
-      <h1>Stock Market Simulator</h1>
+    <>
+      <div>
+        <h1>Stock Market Simulator</h1>
+        <form onSubmit={getScripInfo}>
+          <input
+            type="text"
+            name="scripInfo"
+            id="scripInfo"
+            placeholder="Enter any valid stock name"
+            value={scripName}
+            onChange={(e) => onChange(e)}
+          />
+        </form>
+        <br />
+        <button onClick={(e) => logout(e)}>Logout</button>
+      </div>
+
+      <br />
+      <br />
       <h2>Welcome {user.userName}!</h2>
-      <button onClick={(e) => logout(e)}>Logout</button>
       <ul>
-        <li>watchlist</li>
+        <li>
+          <Link to={ROUTES.WATCHLIST}>Watchlist</Link>
+        </li>
         <li>portfolio</li>
         <li>transactions</li>
       </ul>
-    </div>
+    </>
   );
 };
 

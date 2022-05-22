@@ -6,10 +6,14 @@ exports.scripDetails = async (req, res) => {
     const parsedScripName = scrip.toString().replace(/_/g, " ");
     const scripInfo = await getScripInfo(parsedScripName);
     // console.log(parsedScripName);
-    res.json({ scripInfo: scripInfo });
+    res.json({ success: true, scripInfo: scripInfo });
   } catch (err) {
     console.log(err.message);
-    res.json({ scripInfo: [], message: "Could'nt find stock deails" });
+    res.json({
+      scripInfo: [],
+      success: false,
+      message: "Could'nt find stock details",
+    });
   }
 };
 
