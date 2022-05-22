@@ -8,6 +8,8 @@ import "./style.css";
 
 import { ROUTES } from "../../constants";
 
+import { isNullOrWhiteSpaceOrEmpty } from "../../helpers";
+
 const axios = require("axios").default;
 
 function LoginContent() {
@@ -25,6 +27,12 @@ function LoginContent() {
 
   const onSubmitForm = async (e) => {
     e.preventDefault();
+    if (
+      isNullOrWhiteSpaceOrEmpty(email) ||
+      isNullOrWhiteSpaceOrEmpty(password)
+    ) {
+      return console.log("Missing/invalid inputs");
+    }
     try {
       const body = { email, password };
       const response = await axios.post("http://localhost:4000/login", {

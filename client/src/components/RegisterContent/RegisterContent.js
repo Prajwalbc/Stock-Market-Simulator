@@ -7,24 +7,39 @@ import { ROUTES } from "../../constants";
 
 import "./style.css";
 
+import { isNullOrWhiteSpaceOrEmpty } from "../../helpers";
+
 const axios = require("axios").default;
 
 const RegisterContent = () => {
   const { setUser, checkVerification } = useContext(AuthContext);
 
   const [inputs, setInputs] = useState({
+    name: "",
     email: "",
     password: "",
-    name: "",
+    confirmPassword: "",
   });
 
-  const { email, password, name } = inputs;
+  const { name, email, password, confirmPassword } = inputs;
 
   const onChange = (e) =>
     setInputs({ ...inputs, [e.target.name]: e.target.value });
 
   const onSubmitForm = async (e) => {
     e.preventDefault();
+    setInputs({ ...inputs, name: name.replace(/\s+/g, " ").trim() });
+    if (
+      isNullOrWhiteSpaceOrEmpty(name) ||
+      isNullOrWhiteSpaceOrEmpty(email) ||
+      isNullOrWhiteSpaceOrEmpty(password)
+    ) {
+      return console.log("Missing/invalid inputs");
+    }
+    if (password !== confirmPassword) {
+      console.log("Passwords don't match");
+      return setInputs({ ...inputs, password: "", confirmPassword: "" });
+    }
     try {
       const body = { email, password, name };
       const response = await axios.post("http://localhost:4000/register", {
@@ -103,6 +118,15 @@ const RegisterContent = () => {
               name="password"
               value={password}
               placeholder="Password"
+              onChange={(e) => onChange(e)}
+              className="reg-log-ip"
+            />
+
+            <input
+              type="password"
+              name="confirmPassword"
+              value={confirmPassword}
+              placeholder="Confirm Password"
               onChange={(e) => onChange(e)}
               className="reg-log-ip"
             />
