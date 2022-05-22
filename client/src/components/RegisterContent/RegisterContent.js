@@ -36,6 +36,7 @@ const RegisterContent = () => {
 
       if (parseRes.jwtToken) {
         localStorage.setItem("jwtToken", parseRes.jwtToken);
+        sessionStorage.setItem("isAuthorized", true);
         setUser({ isAuthorized: true, userName: parseRes.userName });
         checkVerification();
         console.log(parseRes.message);

@@ -36,6 +36,7 @@ function LoginContent() {
 
       if (data.jwtToken) {
         localStorage.setItem("jwtToken", data.jwtToken);
+        sessionStorage.setItem("isAuthorized", true);
         setUser({ isAuthorized: true, userName: data.userName });
         checkVerification();
         console.log(data.message);

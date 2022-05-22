@@ -18,7 +18,11 @@ import { NotFound, Home, Register, Login, StockSimulator } from "./Pages";
 const axios = require("axios").default;
 
 function App() {
-  const [user, setUser] = useState({});
+  const [user, setUser] = useState({
+    isAuthorized: sessionStorage.getItem("isAuthorized"),
+    userName: "",
+  });
+  const [scripInfo, setScripInfo] = useState([]);
 
   const checkVerification = async () => {
     if (localStorage.jwtToken) {
