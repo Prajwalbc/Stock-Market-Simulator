@@ -6,6 +6,7 @@ import AuthContext from "../context/AuthContext";
 import SearchScripInfoContext from "../context/SearchScripInfoContext";
 
 import { ROUTES } from "../constants";
+import { isNullOrWhiteSpaceOrEmpty } from "../helpers";
 
 const axios = require("axios").default;
 
@@ -38,7 +39,8 @@ const StockSimulator = () => {
   const getScripInfo = async (e) => {
     e.preventDefault();
 
-    if (scripName === "") return console.log("Enter Stock name");
+    if (isNullOrWhiteSpaceOrEmpty(scripName))
+      return console.log("Enter valid Stock name");
 
     try {
       const parsedScripName = scripName.replace(/ /g, "_");
@@ -60,7 +62,12 @@ const StockSimulator = () => {
           "currentSripName",
           parseRes.scripInfo[0].scripName
         );
-        navigate(ROUTES.SEARCHSCRIPINFO.replace(":scripname", parsedScripName));
+        navigate(
+          ROUTES.SEARCHSCRIPINFO.replace(
+            ":scripname",
+            parseRes.scripInfo[0].scripName.replace(/ /g, "_")
+          )
+        );
         // console.log(parseRes);
       }
     } catch (err) {
