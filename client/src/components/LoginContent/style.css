@@ -1,5 +1,5 @@
 .login-body {
-  background: rgb(10, 10, 18);
+  background: var(--darkBlue);
   padding-bottom: 30rem;
 }
 
@@ -21,7 +21,7 @@
   height: 70px;
   width: 70px;
   border-radius: 35px;
-  border: 1px black;
+  border: 1px var(--black);
   background: linear-gradient(
     to top right,
     rgb(0, 0, 0),
@@ -30,7 +30,7 @@
   );
   margin-left: 65%;
   margin-top: 3em;
-  margin-bottom: 5rem;
+  margin-bottom: 3rem;
 }
 
 .main-body {
@@ -40,18 +40,18 @@
 }
 
 .log-title {
-  color: white;
+  color: var(--white);
   padding-bottom: 1rem;
 }
 
 .reg-log-ip {
   width: 18rem;
-  color: white;
+  color: var(--white);
   border: 3px solid grey;
   padding: 8px;
   margin: 3px;
   border-radius: 7px;
-  background: rgb(10, 10, 18);
+  background: var(--darkBlue);
   font-size: 16px;
 }
 .reg-log-ip:focus {
@@ -69,7 +69,7 @@
   margin: 3px;
   font-size: 16px;
   background: linear-gradient(to right, rgb(224, 22, 100), rgb(247, 127, 72));
-  color: white;
+  color: var(--white);
 }
 .reg-log-btn:hover {
   cursor: pointer;
@@ -78,7 +78,7 @@
 .spn {
   font-size: 14px;
   line-height: 1.25em;
-  color: white;
+  color: var(--white);
   display: flex;
   justify-self: center;
 }

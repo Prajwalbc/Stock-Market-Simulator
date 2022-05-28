@@ -5,8 +5,6 @@ import AuthContext from "../../context/AuthContext";
 
 import { ROUTES } from "../../constants";
 
-import "./style.css";
-
 import { isNullOrWhiteSpaceOrEmpty } from "../../helpers";
 
 const axios = require("axios").default;
