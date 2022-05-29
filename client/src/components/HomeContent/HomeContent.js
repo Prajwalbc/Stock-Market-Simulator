@@ -20,6 +20,11 @@ function HomeContent() {
         </div>
       </div>
 
+      <div className="figures">
+        <div id="pink-circle"></div>
+        <div id="black-circle"></div>
+      </div>
+
       <div className="home-container">
         <div className="home-title-wrapper">
           <h1 className="home-title">Welcome to Stock Market Simulation</h1>
