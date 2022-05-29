@@ -1,6 +1,6 @@
 import React from "react";
 
-import StockSimContent from "../components/StockSimContent/StockSimContent";
+import StockSimContent from "../containers/StockSimContent/StockSimContent";
 
 const StockSimulator = () => {
   return (

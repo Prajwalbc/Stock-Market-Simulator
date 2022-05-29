@@ -1,4 +1,4 @@
-import LoginContent from "../components/LoginContent/LoginContent";
+import LoginContent from "../containers/LoginContent/LoginContent";
 
 const Login = () => {
   return (

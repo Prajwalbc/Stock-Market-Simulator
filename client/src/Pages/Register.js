@@ -1,6 +1,6 @@
 import React from "react";
 
-import RegisterContent from "../components/RegisterContent/RegisterContent";
+import RegisterContent from "../containers/RegisterContent/RegisterContent";
 
 const Register = () => {
   return (

@@ -2,27 +2,26 @@ import React, { useContext, useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { toast } from "react-toastify";
 
-import "./style.css";
-
 import AuthContext from "../../context/AuthContext";
 import SearchScripInfoContext from "../../context/SearchScripInfoContext";
-
-import LoadingSpinner from "../LoadingSpinner/LoadingSpinner";
+import LoadingContext from "../../context/LoadingContext";
 
 import { ROUTES } from "../../constants";
+
 import { isNullOrWhiteSpaceOrEmpty } from "../../helpers";
+
+import "./style.css";
 
 const axios = require("axios").default;
 
-function StockSimContent() {
-  const { user, setUser } = useContext(AuthContext);
+function NavBar() {
+  const { setUser } = useContext(AuthContext);
   const { setScripInfo } = useContext(SearchScripInfoContext);
-
-  const [loading, setLoading] = useState(false);
-
-  const navigate = useNavigate();
+  const { setLoading } = useContext(LoadingContext);
 
   const [scripName, setScripName] = useState("");
+
+  const navigate = useNavigate();
 
   const onChange = (e) => {
     setScripName(e.target.value);
@@ -89,42 +88,31 @@ function StockSimContent() {
 
   return (
     <>
-      {loading ? (
-        <LoadingSpinner />
-      ) : (
-        <div>
-          <div>
-            <Link to={ROUTES.STOCKSIMULATOR} className="header-logo-mid">
-              Stock Market Simulator
-            </Link>
-            <form onSubmit={getScripInfo}>
-              <input
-                type="text"
-                name="scripInfo"
-                id="scripInfo"
-                placeholder="Enter any valid stock name"
-                value={scripName}
-                onChange={(e) => onChange(e)}
-              />
-            </form>
-            <br />
-            <button onClick={(e) => logout(e)}>Logout</button>
-          </div>
-
-          <br />
-          <br />
-          <h2>Welcome {user.userName}!</h2>
-          <ul>
-            <li>
-              <Link to={ROUTES.WATCHLIST}>Watchlist</Link>
-            </li>
-            <li>portfolio</li>
-            <li>transactions</li>
-          </ul>
-        </div>
-      )}
+      <div className="nav-bar">
+        <Link to={ROUTES.STOCKSIMULATOR} className="header-logo-mid">
+          Stock Market Simulator
+        </Link>
+        <form className="search-container">
+          <input
+            type="text"
+            name="scripInfo"
+            id="scripInfo"
+            placeholder="Enter valid stock name"
+            value={scripName}
+            onChange={(e) => onChange(e)}
+            className="search-input"
+          />
+          <button onClick={getScripInfo} className="search-btn">
+            Go
+            {/* <i className="fas fa-search"></i> */}
+          </button>
+        </form>
+        <button onClick={(e) => logout(e)} className="logout-btn">
+          Logout
+        </button>
+      </div>
     </>
   );
 }
 
-export default StockSimContent;
+export default NavBar;

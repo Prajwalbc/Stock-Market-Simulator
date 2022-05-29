@@ -1,6 +1,6 @@
 import React from "react";
 
-import StockScreenContent from "../components/StockScreenContent/StockScreenContent";
+import StockScreenContent from "../containers/StockScreenContent/StockScreenContent";
 
 const SearchStockPage = () => {
   return (
