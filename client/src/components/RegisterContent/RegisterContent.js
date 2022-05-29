@@ -1,5 +1,6 @@
 import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
+import { toast } from "react-toastify";
 
 import AuthContext from "../../context/AuthContext";
 
@@ -32,10 +33,12 @@ const RegisterContent = () => {
       isNullOrWhiteSpaceOrEmpty(email) ||
       isNullOrWhiteSpaceOrEmpty(password)
     ) {
-      return console.log("Missing/invalid inputs");
+      return toast.warning("Missing/invalid inputs");
+      // return console.log("Missing/invalid inputs");
     }
     if (password !== confirmPassword) {
-      console.log("Passwords don't match");
+      // console.log("Passwords don't match");
+      toast.warning("Passwords don't match");
       return setInputs({ ...inputs, password: "", confirmPassword: "" });
     }
     try {
@@ -52,10 +55,12 @@ const RegisterContent = () => {
         sessionStorage.setItem("isAuthorized", true);
         setUser({ isAuthorized: true, userName: parseRes.userName });
         checkVerification();
-        console.log(parseRes.message);
+        toast.success("Registered Successfully");
+        // console.log(parseRes.message);
       } else {
         setUser({ isAuthorized: false, userName: "" });
-        console.log(parseRes.message);
+        toast.error(parseRes.message);
+        // console.log(parseRes.message);
       }
     } catch (err) {
       console.error(err.message);
@@ -81,12 +86,12 @@ const RegisterContent = () => {
         </div>
       </div>
 
-      <div className="login-body">
-        <div className="figures">
-          <div id="pink-circle"></div>
-          <div id="black-circle"></div>
-        </div>
+      <div className="figures">
+        <div id="pink-circle"></div>
+        <div id="black-circle"></div>
+      </div>
 
+      <div className="login-body">
         <form onSubmit={onSubmitForm}>
           <div className="main-body">
             <center>

@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
-// import { toast } from "react-toastify";
+import { toast } from "react-toastify";
 
 import "./style.css";
 
@@ -35,8 +35,8 @@ function StockSimContent() {
       sessionStorage.clear();
       navigate("/");
       setUser({ isAuthorized: false, userName: "" });
-      console.log("Logout successfully");
-      // toast.success("Logout successfully");
+      toast.success("Logout successfully");
+      // console.log("Logout successfully");
     } catch (err) {
       console.error(err.message);
     }
@@ -47,7 +47,8 @@ function StockSimContent() {
     setLoading(true);
 
     if (isNullOrWhiteSpaceOrEmpty(scripName))
-      return console.log("Enter valid Stock name");
+      toast.warning("Enter valid Stock name", { autoClose: 3000 });
+    // return console.log("Enter valid Stock name");
 
     try {
       const parsedScripName = scripName.replace(/ /g, "_");
@@ -59,7 +60,8 @@ function StockSimContent() {
       );
       const parseRes = (await response).data;
       if (parseRes.success === false) {
-        console.log(parseRes.message, " Enter valid stock name");
+        toast.warning("Enter valid stock name");
+        // console.log(parseRes.message, " Enter valid stock name");
         setScripName("");
         setScripInfo([]);
         return;
@@ -92,7 +94,7 @@ function StockSimContent() {
       ) : (
         <div>
           <div>
-            <Link to={ROUTES.HOME} className="header-logo-mid">
+            <Link to={ROUTES.STOCKSIMULATOR} className="header-logo-mid">
               Stock Market Simulator
             </Link>
             <form onSubmit={getScripInfo}>

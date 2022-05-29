@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.min.css";
 
 // Context
 import AuthContext from "./context/AuthContext";
@@ -54,6 +56,8 @@ function App() {
   return (
     <AuthContext.Provider value={{ user, setUser, checkVerification }}>
       <SearchScripInfoContext.Provider value={{ scripInfo, setScripInfo }}>
+        <ToastContainer autoClose={3000} theme="colored" />
+
         <Router>
           <Routes>
             <Route
