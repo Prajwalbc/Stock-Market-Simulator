@@ -22,20 +22,22 @@
 
 .header-link {
   color: var(--white);
+  height: 30px;
   margin: 0rem 1rem;
   font-size: 14px;
   border: 2.5px solid #34343d;
-  border-radius: 15%;
+  border-radius: 8px;
+  text-align: center;
   padding: 3px 10px;
 }
 
 .header-link-selected {
   border: 2.5px solid var(--white) !important;
-  background: linear-gradient(
+  /* background: linear-gradient(
     to right,
     rgb(224, 22, 100),
     rgb(247, 127, 72)
-  ) !important;
+  ) !important; */
 }
 
 /* Home Styling */

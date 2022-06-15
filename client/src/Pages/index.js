@@ -4,4 +4,6 @@ export { default as Register } from "./Register";
 export { default as Login } from "./Login";
 export { default as StockSimulator } from "./StockSimulator";
 export { default as StockScreenPage } from "./StockScreenPage";
-export { default as Watchlist } from "./WatchList";
+export { default as WatchList } from "./WatchList";
+export { default as Transaction } from "./Transaction";
+export { default as Portfolio } from "./Portfolio";

@@ -5,7 +5,7 @@ require("dotenv").config();
 
 exports.authorize = (req, res, next) => {
   // Get token from header
-  const token = req.header("jwt_token");
+  const token = req.header("jwtToken");
 
   // Check if not token
   if (!token) {

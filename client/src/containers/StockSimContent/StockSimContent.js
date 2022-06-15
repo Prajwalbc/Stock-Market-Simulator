@@ -4,9 +4,7 @@ import { Link } from "react-router-dom";
 import "./style.css";
 
 import AuthContext from "../../context/AuthContext";
-import LoadingContext from "../../context/LoadingContext";
 
-import LoadingSpinner from "../../components/LoadingSpinner/LoadingSpinner";
 import NavBar from "../../components/NavBar/NavBar";
 
 import { ROUTES } from "../../constants";
@@ -14,28 +12,24 @@ import { ROUTES } from "../../constants";
 function StockSimContent() {
   const { user } = useContext(AuthContext);
 
-  const { loading } = useContext(LoadingContext);
-
   return (
     <>
-      {loading ? (
-        <LoadingSpinner />
-      ) : (
-        <div>
-          <NavBar />
+      <div>
+        <NavBar />
 
-          <br />
-          <br />
-          <h2>Welcome {user.userName}!</h2>
-          <ul>
-            <li>
-              <Link to={ROUTES.WATCHLIST}>Watchlist</Link>
-            </li>
-            <li>portfolio</li>
-            <li>transactions</li>
-          </ul>
-        </div>
-      )}
+        <h2>Welcome {user.userName}!</h2>
+        <ul>
+          <li>
+            <Link to={ROUTES.WATCHLIST}>Watchlist</Link>
+          </li>
+          <li>
+            <Link to={ROUTES.PORTFOLIO}>Portfolio</Link>
+          </li>
+          <li>
+            <Link to={ROUTES.TRANSACTIONS}>Transactions</Link>
+          </li>
+        </ul>
+      </div>
     </>
   );
 }

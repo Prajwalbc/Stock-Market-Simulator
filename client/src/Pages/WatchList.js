@@ -1,10 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
 
-function Watchlist() {
-  return (
-    <>
-      <h1>WatchList</h1>
-    </>
-  );
+import LoadingContext from "../context/LoadingContext";
+
+import LoadingSpinner from "../components/LoadingSpinner/LoadingSpinner";
+
+import WatchListContent from "../containers/WatchListContent/WatchListContent";
+
+function WatchList() {
+  const { loading } = useContext(LoadingContext);
+
+  return <>{loading ? <LoadingSpinner /> : <WatchListContent />}</>;
 }
-export default Watchlist;
+export default WatchList;

@@ -14,7 +14,7 @@ function AuthContextProvider({ children }) {
     if (localStorage.jwtToken) {
       try {
         const res = await axios.get("http://localhost:4000/auth/verify", {
-          headers: { jwt_token: localStorage.jwtToken },
+          headers: { jwtToken: localStorage.jwtToken },
         });
 
         const parseRes = (await res).data;

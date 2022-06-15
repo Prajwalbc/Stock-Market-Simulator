@@ -20,7 +20,9 @@ import {
   Login,
   StockSimulator,
   StockScreenPage,
-  Watchlist,
+  WatchList,
+  Portfolio,
+  Transaction,
 } from "./Pages";
 
 function App() {
@@ -83,7 +85,25 @@ function App() {
                 path={ROUTES.WATCHLIST}
                 element={
                   <ProtectedRoute>
-                    <Watchlist />
+                    <WatchList />
+                  </ProtectedRoute>
+                }
+              />
+              <Route
+                exact
+                path={ROUTES.PORTFOLIO}
+                element={
+                  <ProtectedRoute>
+                    <Portfolio />
+                  </ProtectedRoute>
+                }
+              />
+              <Route
+                exact
+                path={ROUTES.TRANSACTIONS}
+                element={
+                  <ProtectedRoute>
+                    <Transaction />
                   </ProtectedRoute>
                 }
               />

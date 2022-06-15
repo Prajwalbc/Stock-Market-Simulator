@@ -14,7 +14,7 @@ import "./style.css";
 
 const axios = require("axios").default;
 
-function NavBar() {
+function NavBar(props) {
   const { setUser } = useContext(AuthContext);
   const { setScripInfo } = useContext(SearchScripInfoContext);
   const { setLoading } = useContext(LoadingContext);
@@ -43,18 +43,20 @@ function NavBar() {
 
   const getScripInfo = async (e) => {
     e.preventDefault();
-    setLoading(true);
 
-    if (isNullOrWhiteSpaceOrEmpty(scripName))
-      toast.warning("Enter valid Stock name", { autoClose: 3000 });
-    // return console.log("Enter valid Stock name");
+    if (isNullOrWhiteSpaceOrEmpty(scripName)) {
+      return toast.warning("Enter valid Stock name");
+      // console.log("Enter valid Stock name");
+    }
+
+    setLoading(true);
 
     try {
       const parsedScripName = scripName.replace(/ /g, "_");
       const response = axios.get(
         `http://localhost:4000/ss/ws/${parsedScripName}`,
         {
-          headers: { jwt_token: localStorage.jwtToken },
+          headers: { jwtToken: localStorage.jwtToken },
         }
       );
       const parseRes = (await response).data;
@@ -70,12 +72,13 @@ function NavBar() {
           "currentSripName",
           parseRes.scripInfo[0].scripName
         );
-        navigate(
-          ROUTES.SEARCHSCRIPINFO.replace(
-            ":scripname",
-            parseRes.scripInfo[0].scripName.replace(/ /g, "_")
-          )
+        let parseRoute = ROUTES.SEARCHSCRIPINFO.replace(
+          ":scripname",
+          parseRes.scripInfo[0].scripName.replace(/ /g, "_")
         );
+        if (props.replaceRoute === true)
+          navigate(parseRoute, { replace: true });
+        else navigate(parseRoute);
         // console.log(parseRes);
       }
     } catch (err) {
