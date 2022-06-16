@@ -1,0 +1,85 @@
+.watchlist-content-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.watchlist-content-container h1 {
+  padding-top: 3rem;
+}
+
+.watchlist-update-prices-Btn {
+  color: var(--white);
+  background: linear-gradient(to right, rgb(224, 22, 100), rgb(247, 127, 72));
+  border-radius: 8px;
+  padding: 8px;
+  cursor: pointer;
+  border: none;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.watchlist-update-prices-Btn:disabled {
+  background: linear-gradient(to right, gray, gray);
+}
+
+.watchlist-content-table {
+  border-collapse: collapse;
+  margin: 25px 0;
+  font-size: 15px;
+  /* min-width: 400px; */
+  border-radius: 5px 5px 0 0;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  /* max-width: 900px; */
+  margin: 2rem;
+}
+
+.watchlist-content-table thead tr {
+  background-color: var(--darkBlue);
+  color: #ffffff;
+  text-align: center;
+}
+
+.watchlist-content-table th:nth-child(1) {
+  width: 300px;
+}
+
+.watchlist-content-table th:nth-child(2) {
+  width: 150px;
+}
+.watchlist-content-table th:nth-child(3) {
+  width: 100px;
+}
+
+.watchlist-content-table th,
+.watchlist-content-table td {
+  padding: 12px 15px;
+  text-align: center;
+}
+
+.watchlist-content-table tbody tr {
+  border-bottom: 1px solid #dddddd;
+}
+
+.watchlist-content-table tbody tr:nth-of-type(even) {
+  background-color: #f3f3f3;
+}
+
+.watchlist-content-table tbody tr:last-of-type {
+  border-bottom: 2px solid var(--darkBlue);
+}
+
+.watchlist-content-table tbody tr td:hover {
+  font-weight: bold;
+  color: var(--black);
+}
+
+.remove-watchlist-item {
+  color: var(--white);
+  /* background: linear-gradient(to right, rgb(224, 22, 100), rgb(247, 127, 72)); */
+  background-color: rgb(224, 22, 100);
+  border-radius: 8px;
+  padding: 8px;
+  cursor: pointer;
+  border: none;
+}

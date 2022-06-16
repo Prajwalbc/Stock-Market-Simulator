@@ -6,8 +6,6 @@ import { ROUTES } from "../../constants";
 import LoadingContext from "../../context/LoadingContext";
 import SearchScripInfoContext from "../../context/SearchScripInfoContext";
 
-import "./style.css";
-
 const axios = require("axios").default;
 
 function WatchlistItem({ wList, setWList, wItem }) {
@@ -64,19 +62,20 @@ function WatchlistItem({ wList, setWList, wItem }) {
   };
 
   return (
-    <ul className="watchlist-item-container">
-      <li
+    <tr>
+      <td
         style={{ cursor: "pointer" }}
         onClick={gotoStockScreenPageWithDirectName}
-        className="watchlist-item-name"
       >
         {wItem.w_scrip_name}
-      </li>
-      <li className="watchlist-item-price">{wItem.price}</li>
-      <li>
-        <button onClick={removeItem}>X</button>
-      </li>
-    </ul>
+      </td>
+      <td>{wItem.price}</td>
+      <td>
+        <button className="remove-watchlist-item" onClick={removeItem}>
+          Remove
+        </button>
+      </td>
+    </tr>
   );
 }
 
