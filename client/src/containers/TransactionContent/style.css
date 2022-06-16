@@ -1,9 +1,9 @@
-.Transaction-page-container {
+.transaction-page-container {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.Transaction-page-container h1 {
+.transaction-page-container h1 {
   padding-top: 3rem;
 }
 
