@@ -5,6 +5,8 @@
   --green: #00b490;
   --red: #c50101;
   --purple: #6a85fb;
+  --border: #ecedef;
+  --bg: #effffd;
 }
 
 * {
@@ -24,6 +26,8 @@ body {
 
   height: 100vh;
   width: 100vw;
+
+  background-color: var(--bg);
 }
 
 code {

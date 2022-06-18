@@ -1,7 +1,6 @@
 /* Header Styling */
 .header-container {
-  /* background: linear-gradient(to right, rgb(224, 22, 100), rgb(247, 127, 72)); */
-  background: var(--darkBlue);
+  /* background: var(--darkBlue); */
   display: flex;
   justify-content: space-around;
   padding: 2rem;
@@ -21,18 +20,19 @@
 }
 
 .header-link {
-  color: var(--white);
+  color: var(--black);
   height: 30px;
   margin: 0rem 1rem;
   font-size: 14px;
-  border: 2.5px solid #34343d;
+  border: 2.5px solid gray;
   border-radius: 8px;
   text-align: center;
   padding: 3px 10px;
 }
 
 .header-link-selected {
-  border: 2.5px solid var(--white) !important;
+  border: 2.5px solid var(--black) !important;
+  font-weight: bold;
   /* background: linear-gradient(
     to right,
     rgb(224, 22, 100),
@@ -40,17 +40,48 @@
   ) !important; */
 }
 
+/* figures */
+#pink-circle {
+  height: 120px;
+  width: 120px;
+  border-radius: 60px;
+  background: linear-gradient(
+    to top right,
+    rgb(224, 22, 100),
+    rgb(247, 127, 72)
+  );
+  position: absolute;
+  top: 80%;
+  left: 15%;
+}
+
+#black-circle {
+  position: absolute;
+  height: 70px;
+  width: 70px;
+  border-radius: 35px;
+  border: 1px var(--black);
+  background: linear-gradient(
+    to top right,
+    rgb(0, 0, 0),
+    rgb(10, 10, 10),
+    rgb(59, 50, 53)
+  );
+  top: 15%;
+  left: 80%;
+}
+
 /* Home Styling */
 .home-container {
   height: 100vh;
-  /* background-color: #1d1d26; */
-  background: var(--darkBlue);
+  /* background: var(--darkBlue); */
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-top: -107px;
+  display: flex;
 }
 .home-title-wrapper {
-  margin-top: -40rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -58,15 +89,15 @@
 }
 .home-title {
   padding-bottom: 0.8rem;
-  color: var(--white);
+  color: var(--black);
 }
 .home-sub-title {
   padding-bottom: 2rem;
-  color: var(--white);
+  color: var(--black);
 }
 .home-Link {
   padding: 0.5rem;
-  color: var(--white);
+  color: var(--black);
   background-color: #a0339a;
   border-radius: 10%;
 }

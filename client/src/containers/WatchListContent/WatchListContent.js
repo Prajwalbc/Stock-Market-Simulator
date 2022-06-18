@@ -83,9 +83,7 @@ function WatchListContent() {
     <>
       <NavBar />
       <div className="watchlist-content-container">
-        <h1>WatchList</h1>
-        <br />
-        <br />
+        <h1>WatchList.</h1>
         <button
           className="watchlist-update-prices-Btn"
           disabled={disableBtn}

@@ -7,6 +7,8 @@ import { ROUTES } from "../../constants";
 
 import SearchScripInfoContext from "../../context/SearchScripInfoContext";
 
+import "./style.css";
+
 const axios = require("axios").default;
 
 function StockScreenContent() {
@@ -92,31 +94,45 @@ function StockScreenContent() {
     return (
       <>
         <NavBar replaceRoute={true} />
-        <h1>Stock Screen</h1>
-        <h3>{scripInfo[0].scripName}</h3>
-        {inWatchlist.inWL ? (
-          <button onClick={removeFromWatchList}>Remove From watchlist</button>
-        ) : (
-          <button onClick={addToWatchlist}>Add To WatchList</button>
-        )}
+        <div className="stockscreen-content-container">
+          <h1>Stock Screen.</h1>
+          <h2>{scripInfo[0].scripName}</h2>
+          <h4>{scripInfo[0].scripDes}</h4>
+          <div className="stockscreen-btn-holder">
+            {inWatchlist.inWL ? (
+              <button
+                className="stockscreen-remove-btn"
+                onClick={removeFromWatchList}
+              >
+                Remove From watchlist
+              </button>
+            ) : (
+              <button className="stockscreen-add-btn" onClick={addToWatchlist}>
+                Add To WatchList
+              </button>
+            )}
+            <button className="stockscreen-buy-btn">BUY</button>
+          </div>
 
-        <h5>{scripInfo[0].scripDes}</h5>
-        <table>
-          <tbody>
-            <tr>
-              <th>Ratio Name</th>
-              <th>Ratio Value</th>
-            </tr>
-            {scripInfo
-              .filter((item) => !item.scripName || !item.scripDes)
-              .map((obj) => (
-                <tr key={obj.ratioValue}>
-                  <td>{obj.ratioName}</td>
-                  <td>{obj.ratioValue}</td>
-                </tr>
-              ))}
-          </tbody>
-        </table>
+          <table className="stockscreen-content-table">
+            <thead>
+              <tr>
+                <th>Ratio Name</th>
+                <th>Ratio Value</th>
+              </tr>
+            </thead>
+            <tbody>
+              {scripInfo
+                .filter((item) => !item.scripName || !item.scripDes)
+                .map((obj) => (
+                  <tr key={obj.ratioValue}>
+                    <td>{obj.ratioName}</td>
+                    <td>{obj.ratioValue}</td>
+                  </tr>
+                ))}
+            </tbody>
+          </table>
+        </div>
       </>
     );
   }

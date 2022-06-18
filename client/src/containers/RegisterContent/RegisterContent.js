@@ -86,14 +86,12 @@ const RegisterContent = () => {
         </div>
       </div>
 
-      <div className="figures">
-        <div id="pink-circle"></div>
-        <div id="black-circle"></div>
-      </div>
+      <div id="pink-circle"></div>
+      <div id="black-circle"></div>
 
       <div className="login-body">
         <form onSubmit={onSubmitForm}>
-          <div className="main-body">
+          <div className="reg-log-main-body">
             <center>
               <h1 className="log-title">Register.</h1>
             </center>

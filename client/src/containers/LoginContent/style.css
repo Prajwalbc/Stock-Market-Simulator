@@ -1,69 +1,41 @@
 .login-body {
-  background: var(--darkBlue);
-  padding-bottom: 30rem;
+  height: 100vh;
+  /* background: var(--darkBlue); */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: -107px;
+  display: flex;
 }
 
-.figures {
-  background: var(--darkBlue);
-}
-
-#pink-circle {
-  height: 120px;
-  width: 120px;
-  border-radius: 60px;
-  background: linear-gradient(
-    to top right,
-    rgb(224, 22, 100),
-    rgb(247, 127, 72)
-  );
-  position: absolute;
-  top: 38rem;
-  left: 15%;
-}
-
-#black-circle {
-  height: 70px;
-  width: 70px;
-  border-radius: 35px;
-  border: 1px var(--black);
-  background: linear-gradient(
-    to top right,
-    rgb(0, 0, 0),
-    rgb(10, 10, 10),
-    rgb(59, 50, 53)
-  );
-  margin-left: 65%;
-  margin-top: 3em;
-  margin-bottom: 3rem;
-}
-
-.main-body {
+.reg-log-main-body {
   display: grid;
   justify-content: center;
   grid-row-gap: 1.25em;
 }
 
 .log-title {
-  color: var(--white);
+  color: var(--black);
   padding-bottom: 1rem;
 }
 
 .reg-log-ip {
   width: 18rem;
-  color: var(--white);
+  color: var(--black);
   border: 3px solid grey;
   padding: 8px;
   margin: 3px;
   border-radius: 7px;
-  background: var(--darkBlue);
+  /* background: var(--bg); */
   font-size: 16px;
 }
 .reg-log-ip:focus {
   outline: none;
   border-image: linear-gradient(to right, rgb(224, 22, 100), rgb(247, 127, 72))
     1;
+  /* border-color: var(--black); */
   border-radius: 7px;
-  transition: all 1s;
+  /* transition: all 0.2s; */
 }
 
 .reg-log-btn {

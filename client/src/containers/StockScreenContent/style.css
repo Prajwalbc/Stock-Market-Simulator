@@ -1,0 +1,104 @@
+.stockscreen-content-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.stockscreen-content-container h1 {
+  padding: 3rem 0rem 2rem 0rem;
+}
+.stockscreen-content-container h2 {
+  padding-bottom: 1rem;
+}
+.stockscreen-content-container h4 {
+  max-width: 1000px;
+  padding-bottom: 1rem;
+}
+
+.stockscreen-btn-holder {
+  padding-top: 1rem;
+}
+
+.stockscreen-buy-btn {
+  color: var(--white);
+  background-color: var(--green);
+  border-radius: 8px;
+  padding: 8px;
+  cursor: pointer;
+  border: none;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.stockscreen-remove-btn,
+.stockscreen-add-btn {
+  color: var(--white);
+  border-radius: 8px;
+  padding: 8px;
+  cursor: pointer;
+  border: none;
+  font-size: 13px;
+  font-weight: bold;
+  margin: 15px;
+}
+
+.stockscreen-remove-btn {
+  background-color: rgb(224, 22, 100);
+}
+
+.stockscreen-add-btn {
+  background-color: var(--green);
+}
+
+.stockscreen-content-table {
+  border-collapse: collapse;
+  margin: 25px 0;
+  font-size: 15px;
+  border-radius: 5px 5px 0 0;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.stockscreen-content-table thead tr {
+  background-color: var(--darkBlue);
+  color: #ffffff;
+  text-align: center;
+}
+
+.stockscreen-content-table th:nth-child(1) {
+  width: 250px;
+}
+.stockscreen-content-table th:nth-child(2) {
+  width: 250px;
+}
+
+.stockscreen-content-table th,
+.stockscreen-content-table td {
+  padding: 12px 15px;
+  text-align: center;
+}
+
+.stockscreen-content-table tbody tr {
+  border-bottom: 1px solid #dddddd;
+}
+
+.stockscreen-content-table tbody tr:nth-of-type(even) {
+  background-color: #f3f3f3;
+}
+.stockscreen-content-table tbody tr:nth-of-type(odd) {
+  background-color: white;
+}
+
+.stockscreen-content-table tbody tr:last-of-type {
+  border-bottom: 2px solid var(--darkBlue);
+}
+
+.stockscreen-content-table tbody tr:hover {
+  font-weight: bold;
+}
+
+.stockscreen-content-table tbody tr.tsell {
+  color: var(--green);
+}
+.stockscreen-content-table tbody tr.tbuy {
+  color: var(--red);
+}

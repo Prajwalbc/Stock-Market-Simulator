@@ -31,7 +31,7 @@ function TransactionContent() {
   return (
     <>
       <div className="transaction-page-container">
-        <h1>Transactions</h1>
+        <h1>Transactions.</h1>
         <table className="transactions-content-table">
           <thead>
             <tr>

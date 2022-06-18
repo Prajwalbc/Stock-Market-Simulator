@@ -4,19 +4,15 @@
   align-items: center;
 }
 .transaction-page-container h1 {
-  padding-top: 3rem;
+  padding: 3rem 0rem 1.5rem 0rem;
 }
 
 .transactions-content-table {
   border-collapse: collapse;
-  margin: 25px 0;
   font-size: 15px;
-  /* min-width: 400px; */
   border-radius: 5px 5px 0 0;
   overflow: hidden;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-  /* max-width: 900px; */
-  margin: 3rem;
 }
 
 .transactions-content-table thead tr {
@@ -59,6 +55,9 @@
 
 .transactions-content-table tbody tr:nth-of-type(even) {
   background-color: #f3f3f3;
+}
+.transactions-content-table tbody tr:nth-of-type(odd) {
+  background-color: white;
 }
 
 .transactions-content-table tbody tr:last-of-type {

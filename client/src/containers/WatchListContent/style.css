@@ -16,6 +16,9 @@
   border: none;
   font-size: 15px;
   font-weight: bold;
+  position: relative;
+  left: 26rem;
+  top: 3.1rem;
 }
 
 .watchlist-update-prices-Btn:disabled {
@@ -23,15 +26,12 @@
 }
 
 .watchlist-content-table {
+  margin: 1rem;
   border-collapse: collapse;
-  margin: 25px 0;
   font-size: 15px;
-  /* min-width: 400px; */
   border-radius: 5px 5px 0 0;
   overflow: hidden;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-  /* max-width: 900px; */
-  margin: 2rem;
 }
 
 .watchlist-content-table thead tr {
@@ -63,6 +63,9 @@
 
 .watchlist-content-table tbody tr:nth-of-type(even) {
   background-color: #f3f3f3;
+}
+.watchlist-content-table tbody tr:nth-of-type(odd) {
+  background-color: white;
 }
 
 .watchlist-content-table tbody tr:last-of-type {

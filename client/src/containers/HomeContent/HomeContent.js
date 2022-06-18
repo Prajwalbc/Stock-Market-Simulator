@@ -20,10 +20,8 @@ function HomeContent() {
         </div>
       </div>
 
-      <div className="figures">
-        <div id="pink-circle"></div>
-        <div id="black-circle"></div>
-      </div>
+      <div id="pink-circle"></div>
+      <div id="black-circle"></div>
 
       <div className="home-container">
         <div className="home-title-wrapper">
