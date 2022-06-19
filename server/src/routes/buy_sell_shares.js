@@ -2,14 +2,23 @@ const pool = require("../config/db.js");
 
 exports.buyShares = async (req, res) => {
   try {
+    const dateTime = new Date().toISOString();
     const {
       scripName,
       directScripName,
       transactionType,
-      dateTime,
       scripPrice,
       noOfScrips,
     } = req.body;
+
+    if (
+      scripName === undefined ||
+      directScripName === undefined ||
+      transactionType === undefined ||
+      scripPrice === undefined ||
+      noOfScrips === undefined
+    )
+      return res.json({ success: false, message: "Provide all fields" });
 
     // get balance
     const res1 = await pool.query(
@@ -70,14 +79,23 @@ exports.buyShares = async (req, res) => {
 exports.sellShares = async (req, res) => {
   try {
     const { transactionId } = req.params;
+    const dateTime = new Date().toISOString();
     const {
       scripName,
       directScripName,
       transactionType,
-      dateTime,
       scripPrice,
       noOfScrips,
     } = req.body;
+
+    if (
+      scripName === undefined ||
+      directScripName === undefined ||
+      transactionType === undefined ||
+      scripPrice === undefined ||
+      noOfScrips === undefined
+    )
+      return res.json({ success: false, message: "Provide all fields" });
 
     // get balance
     const res1 = await pool.query(
