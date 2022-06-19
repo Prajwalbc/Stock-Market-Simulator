@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 
+import NavBar from "../../components/NavBar/NavBar";
 import TransactionlistItem from "../../components/TransactionlistItem/TransactionlistItem";
 
 import "./style.css";
@@ -30,6 +31,7 @@ function TransactionContent() {
 
   return (
     <>
+      <NavBar />
       <div className="transaction-page-container">
         <h1>Transactions.</h1>
         <table className="transactions-content-table">
