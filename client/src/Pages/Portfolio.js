@@ -1,13 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
 
+import LoadingContext from "../context/LoadingContext";
+
+import LoadingSpinner from "../components/LoadingSpinner/LoadingSpinner";
 import PortfolioContent from "../containers/PortfolioContent/PortfolioContent";
 
 const Transaction = () => {
-  return (
-    <>
-      <PortfolioContent />
-    </>
-  );
+  const { loading } = useContext(LoadingContext);
+
+  return <>{loading ? <LoadingSpinner /> : <PortfolioContent />}</>;
 };
 
 export default Transaction;
