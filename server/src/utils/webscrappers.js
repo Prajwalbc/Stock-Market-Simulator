@@ -57,6 +57,7 @@ exports.getScripInfoSearch = async (scripName) => {
 
   await browser.close();
 
+  data.forEach((obj, index) => (obj.id = index + 1));
   // console.log(data);
   return data;
 };
@@ -109,7 +110,7 @@ exports.getScripInfoDirect = async (scripName) => {
 
   await browser.close();
 
-  // console.log(data);
+  data.forEach((obj, index) => (obj.id = index + 1));
   return data;
 };
 
