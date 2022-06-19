@@ -30,6 +30,7 @@
 }
 
 .watchlist-content-table {
+  background-color: white;
   margin: 1rem;
   border-collapse: collapse;
   font-size: 15px;

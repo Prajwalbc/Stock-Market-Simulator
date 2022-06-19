@@ -54,7 +54,7 @@
 .spn {
   font-size: 14px;
   line-height: 1.25em;
-  color: var(--white);
+  color: var(--black);
   display: flex;
   justify-self: center;
 }

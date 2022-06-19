@@ -6,8 +6,19 @@
 .transaction-page-container h1 {
   padding: 3rem 0rem 1.5rem 0rem;
 }
+.portfolio-sell-btn {
+  color: var(--white);
+  background-color: var(--purple);
+  border-radius: 10px;
+  padding: 10px 15px;
+  cursor: pointer;
+  border: none;
+  font-size: 14px;
+  font-weight: bold;
+}
 
 .transactions-content-table {
+  background-color: white;
   border-collapse: collapse;
   font-size: 15px;
   border-radius: 5px 5px 0 0;
