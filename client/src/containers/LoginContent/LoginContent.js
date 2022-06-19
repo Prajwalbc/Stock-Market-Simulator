@@ -107,9 +107,7 @@ function LoginContent() {
 
             <span className="spn">
               Don't have an account?
-              <Link to={ROUTES.REGISTER} style={{ color: "white" }}>
-                &nbsp; Register
-              </Link>
+              <Link to={ROUTES.REGISTER}>&nbsp; Register</Link>
               <br />
             </span>
           </div>

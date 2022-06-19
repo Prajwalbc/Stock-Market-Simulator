@@ -136,9 +136,7 @@ const RegisterContent = () => {
 
             <span className="spn">
               Already have an account?
-              <Link to={ROUTES.LOGIN} style={{ color: "white" }}>
-                &nbsp; LogIn
-              </Link>
+              <Link to={ROUTES.LOGIN}>&nbsp; LogIn</Link>
               <br />
             </span>
           </div>
