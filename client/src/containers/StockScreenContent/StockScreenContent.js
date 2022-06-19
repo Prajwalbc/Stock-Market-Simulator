@@ -2,8 +2,10 @@ import React, { useContext, useEffect, useState } from "react";
 import { Navigate } from "react-router-dom";
 import { toast } from "react-toastify";
 
-import NavBar from "../../components/NavBar/NavBar";
 import { ROUTES } from "../../constants";
+
+import NavBar from "../../components/NavBar/NavBar";
+import BuySellModal from "../../components/BuySellModal/BuySellModal";
 
 import SearchScripInfoContext from "../../context/SearchScripInfoContext";
 
@@ -18,6 +20,12 @@ function StockScreenContent() {
     inWL: false,
     id: null,
   });
+
+  const [showBuySellModal, setShowBuySellModal] = useState(false);
+
+  const toggleBuySellModal = () => {
+    setShowBuySellModal(!showBuySellModal);
+  };
 
   const checkInWatchList = async () => {
     if (scripInfo.length === 0) return;
@@ -111,7 +119,12 @@ function StockScreenContent() {
                 Add To WatchList
               </button>
             )}
-            <button className="stockscreen-buy-btn">BUY</button>
+            <button
+              className="stockscreen-buy-btn"
+              onClick={toggleBuySellModal}
+            >
+              BUY
+            </button>
           </div>
 
           <table className="stockscreen-content-table">
@@ -125,7 +138,7 @@ function StockScreenContent() {
               {scripInfo
                 .filter((item) => !item.scripName || !item.scripDes)
                 .map((obj) => (
-                  <tr key={obj.ratioValue}>
+                  <tr key={obj.id}>
                     <td>{obj.ratioName}</td>
                     <td>{obj.ratioValue}</td>
                   </tr>
@@ -133,6 +146,9 @@ function StockScreenContent() {
             </tbody>
           </table>
         </div>
+        {showBuySellModal && (
+          <BuySellModal toggleModal={toggleBuySellModal} buy={true} />
+        )}
       </>
     );
   }
@@ -162,3 +178,65 @@ function StockScreenContent() {
 }
 
 export default StockScreenContent;
+
+{
+  /* <>
+{showBuySellModal ? (
+  <BuySellModal
+    showModal={showBuySellModal}
+    setShowModal={setShowBuySellModal}
+  />
+) : (
+  <div>
+    <NavBar replaceRoute={true} />
+    <div className="stockscreen-content-container">
+      <h1>Stock Screen.</h1>
+      <h2>{scripInfo[0].scripName}</h2>
+      <h4>{scripInfo[0].scripDes}</h4>
+      <div className="stockscreen-btn-holder">
+        {inWatchlist.inWL ? (
+          <button
+            className="stockscreen-remove-btn"
+            onClick={removeFromWatchList}
+          >
+            Remove From watchlist
+          </button>
+        ) : (
+          <button
+            className="stockscreen-add-btn"
+            onClick={addToWatchlist}
+          >
+            Add To WatchList
+          </button>
+        )}
+        <button
+          className="stockscreen-buy-btn"
+          onClick={toggleBuySellModal}
+        >
+          BUY
+        </button>
+      </div>
+
+      <table className="stockscreen-content-table">
+        <thead>
+          <tr>
+            <th>Ratio Name</th>
+            <th>Ratio Value</th>
+          </tr>
+        </thead>
+        <tbody>
+          {scripInfo
+            .filter((item) => !item.scripName || !item.scripDes)
+            .map((obj) => (
+              <tr key={obj.ratioValue}>
+                <td>{obj.ratioName}</td>
+                <td>{obj.ratioValue}</td>
+              </tr>
+            ))}
+        </tbody>
+      </table>
+    </div>
+  </div>
+)}
+</> */
+}

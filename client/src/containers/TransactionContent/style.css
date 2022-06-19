@@ -72,5 +72,5 @@
   color: var(--green);
 }
 .transactions-content-table tbody tr.tbuy {
-  color: var(--red);
+  color: var(--red_hover);
 }
