@@ -10,7 +10,7 @@ function TransactionlistItem({ tItem }) {
         <td>{tItem.t_type.toUpperCase()}</td>
         <td>{getDateTime(tItem.t_date_time)[0]}</td>
         <td>{getDateTime(tItem.t_date_time)[1]}</td>
-        <td>{tItem.t_scrip_price}</td>
+        <td>₹{tItem.t_scrip_price}</td>
         <td>{tItem.t_no_of_scrips}</td>
         <td>₹{tItem.t_scrip_price * tItem.t_no_of_scrips}</td>
       </tr>
@@ -23,7 +23,7 @@ function TransactionlistItem({ tItem }) {
         <td>{tItem.t_type.toUpperCase()}</td>
         <td>{getDateTime(tItem.t_date_time)[0]}</td>
         <td>{getDateTime(tItem.t_date_time)[1]}</td>
-        <td>{tItem.t_scrip_price}</td>
+        <td>₹{tItem.t_scrip_price}</td>
         <td>{tItem.t_no_of_scrips}</td>
         <td>₹{tItem.t_scrip_price * tItem.t_no_of_scrips}</td>
       </tr>
