@@ -8,7 +8,7 @@ import "./style.css";
 
 const axios = require("axios").default;
 
-function BuySellModal({ toggleModal, buy = false, sell = false }) {
+function BuyModal({ toggleModal }) {
   const { scripInfo } = useContext(SearchScripInfoContext);
 
   const shareValue = parseInt(
@@ -56,26 +56,12 @@ function BuySellModal({ toggleModal, buy = false, sell = false }) {
     console.log("buy");
   };
 
-  const sellTransaction = async (e) => {
-    e.preventDefault();
-    console.log("sell");
-  };
-
-  if (buy === true && sell === true) {
-    console.log("cannot have both sell and buy");
-    return (
-      <>
-        <h1>cannot have both sell and buy | check BuySellModal props</h1>
-      </>
-    );
-  }
-
   return (
     <div className="bs-modal-wrapper">
       <div className="bs-modal-container">
         <div className="bs-modal-header">
           <h3>Stock Market Simulator</h3>
-          {buy && <span>BUY</span>} {sell && <span>SELL</span>}
+          <span>BUY</span>
         </div>
         <div id="bottom-border"></div>
 
@@ -112,16 +98,9 @@ function BuySellModal({ toggleModal, buy = false, sell = false }) {
         <div id="bottom-border"></div>
 
         <div className="bs-modal-btns">
-          {buy && (
-            <button id="b1" onClick={(e) => buyTransaction(e)}>
-              Buy
-            </button>
-          )}
-          {sell && (
-            <button id="b1" onClick={(e) => sellTransaction(e)}>
-              Sell
-            </button>
-          )}
+          <button id="b1" onClick={(e) => buyTransaction(e)}>
+            Buy
+          </button>
           <button id="b2" onClick={toggleModal}>
             Cancle
           </button>
@@ -131,4 +110,4 @@ function BuySellModal({ toggleModal, buy = false, sell = false }) {
   );
 }
 
-export default BuySellModal;
+export default BuyModal;

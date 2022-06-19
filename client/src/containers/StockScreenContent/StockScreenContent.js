@@ -5,7 +5,7 @@ import { toast } from "react-toastify";
 import { ROUTES } from "../../constants";
 
 import NavBar from "../../components/NavBar/NavBar";
-import BuySellModal from "../../components/BuySellModal/BuySellModal";
+import BuyModal from "../../components/BuySellModal/BuyModal";
 
 import SearchScripInfoContext from "../../context/SearchScripInfoContext";
 
@@ -21,10 +21,10 @@ function StockScreenContent() {
     id: null,
   });
 
-  const [showBuySellModal, setShowBuySellModal] = useState(false);
+  const [showBuyModal, setShowBuyModal] = useState(false);
 
-  const toggleBuySellModal = () => {
-    setShowBuySellModal(!showBuySellModal);
+  const toggleBuyModal = () => {
+    setShowBuyModal(!showBuyModal);
   };
 
   const checkInWatchList = async () => {
@@ -119,10 +119,7 @@ function StockScreenContent() {
                 Add To WatchList
               </button>
             )}
-            <button
-              className="stockscreen-buy-btn"
-              onClick={toggleBuySellModal}
-            >
+            <button className="stockscreen-buy-btn" onClick={toggleBuyModal}>
               BUY
             </button>
           </div>
@@ -146,9 +143,7 @@ function StockScreenContent() {
             </tbody>
           </table>
         </div>
-        {showBuySellModal && (
-          <BuySellModal toggleModal={toggleBuySellModal} buy={true} />
-        )}
+        {showBuyModal && <BuyModal toggleModal={toggleBuyModal} buy={true} />}
       </>
     );
   }
@@ -178,65 +173,3 @@ function StockScreenContent() {
 }
 
 export default StockScreenContent;
-
-{
-  /* <>
-{showBuySellModal ? (
-  <BuySellModal
-    showModal={showBuySellModal}
-    setShowModal={setShowBuySellModal}
-  />
-) : (
-  <div>
-    <NavBar replaceRoute={true} />
-    <div className="stockscreen-content-container">
-      <h1>Stock Screen.</h1>
-      <h2>{scripInfo[0].scripName}</h2>
-      <h4>{scripInfo[0].scripDes}</h4>
-      <div className="stockscreen-btn-holder">
-        {inWatchlist.inWL ? (
-          <button
-            className="stockscreen-remove-btn"
-            onClick={removeFromWatchList}
-          >
-            Remove From watchlist
-          </button>
-        ) : (
-          <button
-            className="stockscreen-add-btn"
-            onClick={addToWatchlist}
-          >
-            Add To WatchList
-          </button>
-        )}
-        <button
-          className="stockscreen-buy-btn"
-          onClick={toggleBuySellModal}
-        >
-          BUY
-        </button>
-      </div>
-
-      <table className="stockscreen-content-table">
-        <thead>
-          <tr>
-            <th>Ratio Name</th>
-            <th>Ratio Value</th>
-          </tr>
-        </thead>
-        <tbody>
-          {scripInfo
-            .filter((item) => !item.scripName || !item.scripDes)
-            .map((obj) => (
-              <tr key={obj.ratioValue}>
-                <td>{obj.ratioName}</td>
-                <td>{obj.ratioValue}</td>
-              </tr>
-            ))}
-        </tbody>
-      </table>
-    </div>
-  </div>
-)}
-</> */
-}
