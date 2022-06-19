@@ -21,6 +21,10 @@
   top: 3.1rem;
 }
 
+.watchlist-update-prices-Btn:hover {
+  background: linear-gradient(to right, rgb(206, 20, 91), rgb(216, 111, 63));
+}
+
 .watchlist-update-prices-Btn:disabled {
   background: linear-gradient(to right, gray, gray);
 }
@@ -80,9 +84,12 @@
 .remove-watchlist-item {
   color: var(--white);
   /* background: linear-gradient(to right, rgb(224, 22, 100), rgb(247, 127, 72)); */
-  background-color: rgb(224, 22, 100);
+  background-color: var(--red);
   border-radius: 8px;
   padding: 8px;
   cursor: pointer;
   border: none;
+}
+.remove-watchlist-item:hover {
+  background-color: var(--red_hover);
 }

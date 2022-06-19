@@ -20,33 +20,42 @@
 
 .stockscreen-buy-btn {
   color: var(--white);
-  background-color: var(--green);
-  border-radius: 8px;
-  padding: 8px;
+  background-color: var(--purple);
+  border-radius: 10px;
+  padding: 10px 15px;
   cursor: pointer;
   border: none;
-  font-size: 13px;
+  font-size: 14px;
   font-weight: bold;
+}
+.stockscreen-buy-btn:hover {
+  background-color: var(--purple_hover);
 }
 
 .stockscreen-remove-btn,
 .stockscreen-add-btn {
   color: var(--white);
-  border-radius: 8px;
-  padding: 8px;
+  border-radius: 10px;
+  padding: 10px 15px;
   cursor: pointer;
   border: none;
-  font-size: 13px;
+  font-size: 14px;
   font-weight: bold;
   margin: 15px;
 }
 
 .stockscreen-remove-btn {
-  background-color: rgb(224, 22, 100);
+  background-color: var(--red);
+}
+.stockscreen-remove-btn:hover {
+  background-color: var(--red_hover);
 }
 
 .stockscreen-add-btn {
   background-color: var(--green);
+}
+.stockscreen-add-btn:hover {
+  background-color: var(--green_hover);
 }
 
 .stockscreen-content-table {

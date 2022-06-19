@@ -3,8 +3,11 @@
   --white: #fdfffc;
   --darkBlue: #011627;
   --green: #00b490;
-  --red: #c50101;
+  --green_hover: #01a584;
+  --red: #e01664;
+  --red_hover: #c50101;
   --purple: #6a85fb;
+  --purple_hover: #6077e0;
   --border: #ecedef;
   --bg: #effffd;
 }
