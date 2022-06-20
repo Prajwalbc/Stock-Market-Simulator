@@ -102,7 +102,7 @@ function BuyModal({ toggleModal }) {
             Buy
           </button>
           <button id="b2" onClick={toggleModal}>
-            Cancle
+            Cancel
           </button>
         </div>
       </div>
