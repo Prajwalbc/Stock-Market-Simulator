@@ -113,7 +113,7 @@ exports.sellShares = async (req, res) => {
 
       if (res1.rowCount === 0 || res1.rows[0].p_no_of_scrips < noOfScrips) {
         return res.json({
-          success: true,
+          success: false,
           message: "Cannot sell if never owner or more than owned shares",
         });
       }
@@ -142,10 +142,18 @@ exports.sellShares = async (req, res) => {
 
       // update portfolio
       const updatedNoOfScrips = res1.rows[0].p_no_of_scrips - noOfScrips;
-      const res4 = await pool.query(
-        "UPDATE sim_portfolios SET p_no_of_scrips = $1 WHERE u_id = $2 AND t_id = $3",
+      const portfolioRes = await pool.query(
+        "UPDATE sim_portfolios SET p_no_of_scrips = $1 WHERE u_id = $2 AND t_id = $3 RETURNING *",
         [updatedNoOfScrips, req.user.id, transactionId]
       );
+
+      // delete if p_no_of_scrips is 0
+      if (portfolioRes.rows[0].p_no_of_scrips === 0) {
+        const portfolioRes = await pool.query(
+          "DELETE FROM sim_portfolios WHERE u_id = $1 AND t_id = $2",
+          [req.user.id, transactionId]
+        );
+      }
 
       return res.json({ success: true, message: "Share sold successfully" });
     }
