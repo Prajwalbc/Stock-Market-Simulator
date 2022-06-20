@@ -94,9 +94,9 @@ function StockScreenContent() {
     }
   };
 
-  window.onbeforeunload = function () {
-    return "";
-  };
+  // window.onbeforeunload = function () {
+  //   return "";
+  // };
 
   if (scripInfo[0]) {
     return (
