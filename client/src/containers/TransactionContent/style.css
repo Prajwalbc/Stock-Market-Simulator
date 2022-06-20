@@ -16,6 +16,12 @@
   font-size: 14px;
   font-weight: bold;
 }
+.portfolio-sell-btn:hover {
+  background-color: var(--purple_hover);
+}
+.portfolio-sell-btn:disabled {
+  background-color: gray;
+}
 
 .transactions-content-table {
   background-color: white;

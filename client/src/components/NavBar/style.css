@@ -67,9 +67,10 @@
   cursor: pointer;
   position: relative;
   outline: none;
-  background-color: rgb(218, 216, 228);
+  box-shadow: 0 1px 5px 0 rgb(0 0 0 / 30%);
+  background-color: #efebff;
   /* color: white; */
 }
 .logout-btn:hover {
-  background-color: rgb(209, 205, 224);
+  background-color: #e0dcee;
 }

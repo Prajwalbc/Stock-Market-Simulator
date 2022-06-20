@@ -49,6 +49,18 @@
   height: 1px;
 }
 
+#sell-price-details {
+  display: flex;
+}
+#sell-price-details h5 {
+  /* padding-right: 2rem; */
+  width: 130px;
+}
+#sell-price-details h4 {
+  /* padding-right: 4.9rem; */
+  width: 130px;
+}
+
 .bs-modal-container .bs-modal-info {
   padding: 2rem;
 }
