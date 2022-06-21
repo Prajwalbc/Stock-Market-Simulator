@@ -42,6 +42,7 @@ code {
 
 a {
   text-decoration: none;
+  color: var(--white);
 }
 
 .img-icons {

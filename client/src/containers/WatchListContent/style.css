@@ -18,8 +18,8 @@
   font-size: 15px;
   font-weight: bold;
   position: relative;
-  left: 26rem;
-  top: 3.1rem;
+  left: 27rem;
+  top: 3.2rem;
 }
 
 .watchlist-update-prices-Btn:hover {
@@ -31,6 +31,7 @@
 }
 
 .watchlist-content-table {
+  margin-bottom: 3.5rem;
   background-color: white;
   margin: 1rem;
   border-collapse: collapse;
@@ -56,7 +57,7 @@
   width: 150px;
 }
 .watchlist-content-table th:nth-child(3) {
-  width: 100px;
+  width: 130px;
 }
 
 .watchlist-content-table th,

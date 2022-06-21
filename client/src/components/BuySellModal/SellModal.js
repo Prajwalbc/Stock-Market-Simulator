@@ -26,9 +26,18 @@ function SellModal({ toggleModal, item }) {
   //   window.location.reload(false);
   // }
 
+  let profitLoss = "0";
+  const pl_result = item.p_current_price - item.p_bought_price;
+  if (pl_result >= 0) {
+    profitLoss = "+ ₹" + pl_result;
+  } else {
+    profitLoss = "- ₹" + pl_result;
+  }
+
   const sellTransaction = async (e) => {
     e.preventDefault();
     try {
+      toggleModal();
       const buyResponse = await axios.post(
         `http://localhost:4000/transactions/sell/${item.t_id}`,
         {
@@ -48,6 +57,7 @@ function SellModal({ toggleModal, item }) {
 
       if (parseRes.success === true) {
         toast.success(parseRes.message);
+
         return setTimeout(() => {
           window.location.reload(false);
         }, 3000);
@@ -91,7 +101,7 @@ function SellModal({ toggleModal, item }) {
           <div id="sell-price-details">
             <h4>₹ {item.p_bought_price}</h4>
             <h4>₹ {item.p_current_price}</h4>
-            <h4>pl_</h4>
+            <h4>{profitLoss}</h4>
           </div>
           <h5>No. of shares owned : {item.p_no_of_scrips}</h5>
           <input
@@ -110,10 +120,18 @@ function SellModal({ toggleModal, item }) {
         <div id="bottom-border"></div>
 
         <div className="bs-modal-btns">
-          <button id="b1" onClick={(e) => sellTransaction(e)}>
+          <button
+            id="bs-modal-sell-btn-js"
+            className="b1"
+            onClick={(e) => sellTransaction(e)}
+          >
             Sell
           </button>
-          <button id="b2" onClick={toggleModal}>
+          <button
+            id="bs-modal-sell-btn-js"
+            className="b2"
+            onClick={toggleModal}
+          >
             Cancel
           </button>
         </div>

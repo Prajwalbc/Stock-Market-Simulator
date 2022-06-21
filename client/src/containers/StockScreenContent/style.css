@@ -60,6 +60,7 @@
 }
 
 .stockscreen-content-table {
+  margin-bottom: 3.5rem;
   color: var(--black);
   border-collapse: collapse;
   margin: 25px 0;
@@ -93,10 +94,10 @@
 }
 
 .stockscreen-content-table tbody tr:nth-of-type(even) {
-  background-color: #ebebeb;
+  background-color: #f3f3f3;
 }
 .stockscreen-content-table tbody tr:nth-of-type(odd) {
-  background-color: #f3f3f3;
+  background-color: white;
 }
 
 .stockscreen-content-table tbody tr:last-of-type {

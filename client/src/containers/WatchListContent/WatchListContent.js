@@ -35,8 +35,8 @@ function WatchListContent() {
     const scripDetails = wList;
     try {
       setDisableBtn(true);
-      if (scripDetails.length > 3) {
-        toast.warning("Too many items in watchlist, MAX 3");
+      if (scripDetails.length > 5) {
+        toast.warning("Too many items | MAX = 5");
         setTimeout(() => {
           setDisableBtn(false);
         }, 4000);
