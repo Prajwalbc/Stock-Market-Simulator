@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 
 import NavBar from "../../components/NavBar/NavBar";
 import PortfoliolistItem from "../../components/PortfoliolistItem/PortfoliolistItem";
+import { ROUTES } from "../../constants";
 
 import "./style.css";
 
@@ -28,46 +30,6 @@ function PortfolioContent() {
         setPortfolioData(parseportfolioRes.data);
         // console.log(parseportfolioRes.data);
       }
-      //   for (let i = 0; i < parseportfolioRes.data.length; i++) {
-      //     parseportfolioRes.data[i].p_current_price = "";
-      //   }
-      //   // setPortfolioData(parseportfolioRes.data);
-
-      //   let directScripNameLst = [];
-      //   for (let i = 0; i < parseportfolioRes.data.length; i++) {
-      //     directScripNameLst.push(
-      //       parseportfolioRes.data[i].p_direct_scrip_name
-      //     );
-      //   }
-      //   const uniq = [...new Set(directScripNameLst)];
-
-      //   if (uniq.length > MAX_API_CALLS) {
-      //     toast.warning("Profit/loss not available | MAX API = 7");
-      //     return setPortfolioData(parseportfolioRes.data);
-      //   }
-
-      //   const currentPriceLstRes = axios.put(
-      //     "http://localhost:4000/ss/ws/direct/update/list",
-      //     { scripRouteNames: uniq },
-      //     { headers: { jwtToken: localStorage.getItem("jwtToken") } }
-      //   );
-      //   const currentPriceLst = (await currentPriceLstRes).data;
-      //   console.log(currentPriceLst);
-
-      //   for (let i = 0; i < parseportfolioRes.data.length; i++) {
-      //     for (let j = 0; j < currentPriceLst.data.length; j++) {
-      //       if (
-      //         parseportfolioRes.data[i].p_direct_scrip_name ===
-      //         currentPriceLst.data[i].directScripName
-      //       ) {
-      //         parseportfolioRes.data[i].p_current_price =
-      //           currentPriceLst.data[i].scripPrice;
-      //       }
-      //     }
-      //   }
-      // }
-      // console.log(parseportfolioRes.data);
-      // setPortfolioData(parseportfolioRes.data);
     } catch (err) {
       console.log(err.message);
     }
@@ -79,9 +41,16 @@ function PortfolioContent() {
   return (
     <>
       <NavBar />
+      <Link className="back-icon" to={ROUTES.STOCKSIMULATOR}>
+        <img
+          src={require("../../assets/icons/back.png")}
+          alt="back_icon"
+          className="img-icons back-icon"
+        />
+      </Link>
       <div className="portfolio-content-container">
         <h1 id="header">Portfolio.</h1>
-        <h3>Balance : ₹ {balance}</h3>
+        <h3 id="balance">Balance : ₹ {balance}</h3>
         <div className="portfolio-content-table">
           <div id="thead">
             <div id="tr">

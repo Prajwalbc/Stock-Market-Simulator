@@ -15,18 +15,18 @@
 }
 
 .log-title {
-  color: var(--black);
+  color: var(--white);
   padding-bottom: 1rem;
 }
 
 .reg-log-ip {
   width: 18rem;
-  color: var(--black);
+  color: var(--white);
   border: 3px solid grey;
   padding: 8px;
   margin: 3px;
   border-radius: 7px;
-  /* background: var(--bg); */
+  background: var(--bg);
   font-size: 16px;
 }
 .reg-log-ip:focus {

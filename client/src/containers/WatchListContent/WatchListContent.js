@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 
 import NavBar from "../../components/NavBar/NavBar";
 import WatchlistItem from "../../components/WatchlistItem/WatchlistItem";
+import { ROUTES } from "../../constants";
 
 import "./style.css";
 
@@ -82,6 +84,13 @@ function WatchListContent() {
   return (
     <>
       <NavBar />
+      <Link className="back-icon" to={ROUTES.STOCKSIMULATOR}>
+        <img
+          src={require("../../assets/icons/back.png")}
+          alt="back_icon"
+          className="img-icons back-icon"
+        />
+      </Link>
       <div className="watchlist-content-container">
         <h1>WatchList.</h1>
         <button

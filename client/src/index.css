@@ -9,7 +9,9 @@
   --purple: #6a85fb;
   --purple_hover: #6077e0;
   --border: #ecedef;
-  --bg: #ccf0eb;
+  --black_border: #13334d;
+  --bg: #011627;
+  /* --bg: #ccf0eb; */
 }
 
 * {
@@ -40,5 +42,18 @@ code {
 
 a {
   text-decoration: none;
-  color: black;
+}
+
+.img-icons {
+  height: 20px;
+  width: 20px;
+  -webkit-filter: invert(1);
+  filter: invert(1);
+  margin-right: 1rem;
+}
+
+.back-icon {
+  position: relative;
+  top: 43px;
+  left: 120px;
 }

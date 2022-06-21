@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import { Navigate } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import { toast } from "react-toastify";
 
 import { ROUTES } from "../../constants";
@@ -102,6 +102,13 @@ function StockScreenContent() {
     return (
       <>
         <NavBar replaceRoute={true} />
+        <Link className="back-icon" to={ROUTES.STOCKSIMULATOR}>
+          <img
+            src={require("../../assets/icons/back.png")}
+            alt="back_icon"
+            className="img-icons back-icon"
+          />
+        </Link>
         <div className="stockscreen-content-container">
           <h1>Stock Screen.</h1>
           <h2>{scripInfo[0].scripName}</h2>

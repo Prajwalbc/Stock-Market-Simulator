@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 import NavBar from "../../components/NavBar/NavBar";
 import TransactionlistItem from "../../components/TransactionlistItem/TransactionlistItem";
+import { ROUTES } from "../../constants";
 
 import "./style.css";
 
@@ -32,6 +34,13 @@ function TransactionContent() {
   return (
     <>
       <NavBar />
+      <Link className="back-icon" to={ROUTES.STOCKSIMULATOR}>
+        <img
+          src={require("../../assets/icons/back.png")}
+          alt="back_icon"
+          className="img-icons back-icon"
+        />
+      </Link>
       <div className="transaction-page-container">
         <h1>Transactions.</h1>
         <table className="transactions-content-table">

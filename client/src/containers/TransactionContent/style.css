@@ -4,7 +4,8 @@
   align-items: center;
 }
 .transaction-page-container h1 {
-  padding: 3rem 0rem 1.5rem 0rem;
+  padding: 3rem 0rem 2.5rem 0rem;
+  color: var(--white);
 }
 .portfolio-sell-btn {
   color: var(--white);
@@ -29,12 +30,12 @@
   font-size: 15px;
   border-radius: 5px 5px 0 0;
   overflow: hidden;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  /* box-shadow: 0 0 20px rgba(255, 255, 255, 0.1); */
 }
 
 .transactions-content-table thead tr {
-  background-color: var(--darkBlue);
-  color: #ffffff;
+  background: linear-gradient(to right, #e01664, #f77f48);
+  color: var(--white);
   text-align: center;
 }
 
@@ -78,7 +79,7 @@
 }
 
 .transactions-content-table tbody tr:last-of-type {
-  border-bottom: 2px solid var(--darkBlue);
+  border-bottom: 3px solid #f77f48;
 }
 
 .transactions-content-table tbody tr:hover {
