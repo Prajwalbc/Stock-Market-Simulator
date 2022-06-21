@@ -26,10 +26,9 @@ function HomeContent() {
       <div className="home-container">
         <div className="home-title-wrapper">
           <h1 className="home-title">Welcome to Stock Market Simulation</h1>
-          <h5 className="home-sub-title">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro autem
-            quae
-          </h5>
+          <h4 className="home-sub-title">
+            Learn, Explore and Practice trading shares using virtual currency!
+          </h4>
           <Link to={ROUTES.LOGIN} className="reg-log-btn">
             Learn More
           </Link>

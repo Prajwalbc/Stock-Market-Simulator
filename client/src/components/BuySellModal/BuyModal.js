@@ -98,10 +98,10 @@ function BuyModal({ toggleModal }) {
         <div id="bottom-border"></div>
 
         <div className="bs-modal-btns">
-          <button id="b1" onClick={(e) => buyTransaction(e)}>
+          <button className="b1" onClick={(e) => buyTransaction(e)}>
             Buy
           </button>
-          <button id="b2" onClick={toggleModal}>
+          <button className="b2" onClick={toggleModal}>
             Cancel
           </button>
         </div>

@@ -89,11 +89,12 @@
   justify-content: center;
 }
 .home-title {
-  padding-bottom: 0.8rem;
+  padding-bottom: 1rem;
   color: var(--white);
 }
 .home-sub-title {
-  padding-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  font-size: 14.5px;
   color: var(--white);
 }
 .home-Link {
