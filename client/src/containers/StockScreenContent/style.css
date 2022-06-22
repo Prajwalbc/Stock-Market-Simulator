@@ -1,0 +1,116 @@
+.stockscreen-content-container {
+  color: var(--white);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.stockscreen-content-container h1 {
+  padding: 3rem 0rem 2rem 0rem;
+}
+.stockscreen-content-container h2 {
+  padding-bottom: 1rem;
+}
+.stockscreen-content-container h4 {
+  max-width: 1000px;
+  padding-bottom: 1rem;
+}
+
+.stockscreen-btn-holder {
+  padding-top: 1rem;
+}
+
+.stockscreen-buy-btn {
+  color: var(--white);
+  background-color: var(--purple);
+  border-radius: 10px;
+  padding: 10px 15px;
+  cursor: pointer;
+  border: none;
+  font-size: 14px;
+  font-weight: bold;
+}
+.stockscreen-buy-btn:hover {
+  background-color: var(--purple_hover);
+}
+
+.stockscreen-remove-btn,
+.stockscreen-add-btn {
+  color: var(--white);
+  border-radius: 10px;
+  padding: 10px 15px;
+  cursor: pointer;
+  border: none;
+  font-size: 14px;
+  font-weight: bold;
+  margin: 15px;
+}
+
+.stockscreen-remove-btn {
+  background-color: var(--red);
+}
+.stockscreen-remove-btn:hover {
+  background-color: var(--red_hover);
+}
+
+.stockscreen-add-btn {
+  background-color: var(--green);
+}
+.stockscreen-add-btn:hover {
+  background-color: var(--green_hover);
+}
+
+.stockscreen-content-table {
+  margin-bottom: 3.5rem;
+  color: var(--black);
+  border-collapse: collapse;
+  margin: 25px 0;
+  font-size: 15px;
+  border-radius: 5px 5px 0 0;
+  overflow: hidden;
+  /* box-shadow: 0 0 20px rgba(255, 255, 255, 0.1); */
+}
+
+.stockscreen-content-table thead tr {
+  background: linear-gradient(to right, #e01664, #f77f48);
+  color: var(--white);
+  text-align: center;
+}
+
+.stockscreen-content-table th:nth-child(1) {
+  width: 250px;
+}
+.stockscreen-content-table th:nth-child(2) {
+  width: 250px;
+}
+
+.stockscreen-content-table th,
+.stockscreen-content-table td {
+  padding: 12px 15px;
+  text-align: center;
+}
+
+.stockscreen-content-table tbody tr {
+  border-bottom: 1px solid #dddddd;
+}
+
+.stockscreen-content-table tbody tr:nth-of-type(even) {
+  background-color: #f3f3f3;
+}
+.stockscreen-content-table tbody tr:nth-of-type(odd) {
+  background-color: white;
+}
+
+.stockscreen-content-table tbody tr:last-of-type {
+  border-bottom: 3px solid #f77f48;
+}
+
+.stockscreen-content-table tbody tr:hover {
+  font-weight: bold;
+}
+
+.stockscreen-content-table tbody tr.tsell {
+  color: var(--green);
+}
+.stockscreen-content-table tbody tr.tbuy {
+  color: var(--red);
+}

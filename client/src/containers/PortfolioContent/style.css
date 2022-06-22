@@ -1,0 +1,95 @@
+.portfolio-content-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.portfolio-content-container #header {
+  padding-top: 3rem;
+  color: var(--white);
+}
+.portfolio-content-container #balance {
+  padding: 1.5rem;
+  color: var(--white);
+}
+
+.portfolio-content-table {
+  margin-bottom: 3.5rem;
+  background-color: white;
+  margin: 1rem;
+  border-collapse: collapse;
+  /* font-size: 15px; */
+  border-radius: 5px 5px 0 0;
+  overflow: hidden;
+  /* box-shadow: 0 0 20px rgba(255, 255, 255, 0.1); */
+}
+
+.portfolio-content-table #th {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.portfolio-content-table #thead #tr {
+  background: linear-gradient(to right, #e01664, #f77f48);
+  font-weight: bold;
+  color: #ffffff;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 55px;
+}
+
+.portfolio-content-table #th:nth-child(1) {
+  width: 250px;
+}
+.portfolio-content-table #th:nth-child(2) {
+  width: 120px;
+}
+.portfolio-content-table #th:nth-child(3) {
+  width: 120px;
+}
+.portfolio-content-table #th:nth-child(4) {
+  width: 140px;
+}
+.portfolio-content-table #th:nth-child(5) {
+  width: 130px;
+}
+.portfolio-content-table #th:nth-child(6) {
+  width: 120px;
+}
+.portfolio-content-table #th:nth-child(7) {
+  width: 120px;
+}
+
+.portfolio-content-table #th,
+.portfolio-content-table #td {
+  padding: 12px 15px;
+  text-align: center;
+}
+
+.portfolio-content-table #tbody #tr {
+  border-bottom: 1px solid #dddddd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.portfolio-content-table #tbody #tr:nth-of-type(even) {
+  background-color: #f3f3f3;
+}
+.portfolio-content-table #tbody #tr:nth-of-type(odd) {
+  background-color: white;
+}
+
+.portfolio-content-table #tbody #tr:last-of-type {
+  border-bottom: 3px solid #f77f48;
+}
+
+.portfolio-content-table #tbody #tr:hover {
+  font-weight: bold;
+}
+
+.portfolio-content-table #portfolio-empty {
+  padding: 1rem;
+}

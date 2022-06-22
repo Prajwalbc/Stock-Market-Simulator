@@ -1,1 +1,26 @@
+.stock-sim-content {
+  height: 60vh;
+  color: var(--white);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
 
+.stock-sim-content h1 {
+  padding: 2rem;
+}
+.stock-sim-content h2 {
+  padding-bottom: 1rem;
+}
+.stock-sim-content ul {
+  padding: 1rem;
+  /* display: flex; */
+}
+.stock-sim-content ul li {
+  padding: 0.7rem;
+}
+
+.stock-sim-content #link {
+  color: var(--white);
+}

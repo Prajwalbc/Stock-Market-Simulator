@@ -16,6 +16,7 @@ const {
 } = require("./watchlistRoute");
 const { getTransactions } = require("./transactionRoute.js");
 const { buyShares, sellShares } = require("./buy_sell_shares.js");
+const { getPortfolios } = require("./portfolioRoute.js");
 
 // Verify
 router.route("/auth/verify").get(authorize, verify);
@@ -47,5 +48,8 @@ router.route("/watchlist/:id").delete(authorize, removeFromWatchList);
 router.route("/transactions").get(authorize, getTransactions);
 router.route("/transactions/buy").post(authorize, buyShares);
 router.route("/transactions/sell/:transactionId").post(authorize, sellShares);
+
+// portfolio
+router.route("/porfolios").get(authorize, getPortfolios);
 
 module.exports = router;

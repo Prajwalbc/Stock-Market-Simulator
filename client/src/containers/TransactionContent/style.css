@@ -1,0 +1,95 @@
+.transaction-page-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.transaction-page-container h1 {
+  padding: 3rem 0rem 2.5rem 0rem;
+  color: var(--white);
+}
+.portfolio-sell-btn {
+  color: var(--white);
+  background-color: var(--purple);
+  border-radius: 10px;
+  padding: 10px 15px;
+  cursor: pointer;
+  border: none;
+  font-size: 14px;
+  font-weight: bold;
+}
+.portfolio-sell-btn:hover {
+  background-color: var(--purple_hover);
+}
+.portfolio-sell-btn:disabled {
+  background-color: gray;
+}
+
+.transactions-content-table {
+  margin-bottom: 3.5rem;
+  background-color: white;
+  border-collapse: collapse;
+  font-size: 15px;
+  border-radius: 5px 5px 0 0;
+  /* overflow: hidden; */
+  /* box-shadow: 0 0 20px rgba(255, 255, 255, 0.1); */
+}
+
+.transactions-content-table thead tr {
+  background: linear-gradient(to right, #e01664, #f77f48);
+  color: var(--white);
+  text-align: center;
+}
+
+.transactions-content-table th:nth-child(1) {
+  width: 250px;
+}
+.transactions-content-table th:nth-child(2) {
+  width: 80px;
+}
+.transactions-content-table th:nth-child(3) {
+  width: 100px;
+}
+.transactions-content-table th:nth-child(4) {
+  width: 100px;
+}
+.transactions-content-table th:nth-child(5) {
+  width: 100px;
+}
+.transactions-content-table th:nth-child(6) {
+  width: 140px;
+}
+.transactions-content-table th:nth-child(7) {
+  width: 100px;
+}
+
+.transactions-content-table th,
+.transactions-content-table td {
+  padding: 12px 15px;
+  text-align: center;
+}
+
+.transactions-content-table tbody tr {
+  border-bottom: 1px solid #dddddd;
+}
+
+.transactions-content-table tbody tr:nth-of-type(even) {
+  background-color: #f3f3f3;
+}
+.transactions-content-table tbody tr:nth-of-type(odd) {
+  background-color: white;
+}
+
+.transactions-content-table tbody tr:last-of-type {
+  border-bottom: 3px solid #f77f48;
+}
+
+.transactions-content-table tbody tr:hover {
+  font-weight: bold;
+}
+
+.transactions-content-table tbody tr.tsell {
+  color: var(--green);
+}
+.transactions-content-table tbody tr.tbuy {
+  color: var(--red_hover);
+}

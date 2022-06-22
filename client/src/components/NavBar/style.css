@@ -3,7 +3,8 @@
   align-self: center;
   justify-content: space-around;
   padding: 1rem;
-  background: var(--darkBlue);
+  /* background: var(--darkBlue); */
+  border-bottom: 1px solid var(--black_border);
 }
 
 .header-logo-mid {
@@ -27,6 +28,7 @@
   border-radius: 5px;
   font-size: 16px;
   padding: 15px 5px;
+  /* box-shadow: 0 1px 5px 0 rgba(255, 255, 255, 0.3); */
 }
 
 .search-input:focus {
@@ -47,6 +49,10 @@
   font-weight: bold;
 }
 
+.search-btn:hover {
+  background: linear-gradient(to right, rgb(206, 20, 91), rgb(216, 111, 63));
+}
+
 .logout-btn {
   display: inline-block;
   height: 30px;
@@ -60,4 +66,10 @@
   cursor: pointer;
   position: relative;
   outline: none;
+  box-shadow: 0 1px 5px 0 rgba(255, 255, 255, 0.3);
+  background-color: #efebff;
+  /* color: white; */
+}
+.logout-btn:hover {
+  background-color: #e0dcee;
 }

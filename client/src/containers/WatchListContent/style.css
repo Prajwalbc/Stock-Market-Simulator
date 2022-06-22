@@ -1,0 +1,101 @@
+.watchlist-content-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.watchlist-content-container h1 {
+  padding-top: 3rem;
+  color: var(--white);
+}
+
+.watchlist-update-prices-Btn {
+  color: var(--white);
+  background: linear-gradient(to right, #f77f48, #e01664);
+  border-radius: 8px;
+  padding: 8px;
+  cursor: pointer;
+  border: none;
+  font-size: 15px;
+  font-weight: bold;
+  position: relative;
+  left: 27rem;
+  top: 3.2rem;
+}
+
+.watchlist-update-prices-Btn:hover {
+  background: linear-gradient(to right, #d86f3f, #ce145b);
+}
+
+.watchlist-update-prices-Btn:disabled {
+  background: linear-gradient(to right, gray, gray);
+}
+
+.watchlist-content-table {
+  margin-bottom: 3.5rem;
+  background-color: white;
+  margin: 1rem;
+  border-collapse: collapse;
+  font-size: 15px;
+  border-radius: 5px 5px 0 0;
+  overflow: hidden;
+  /* box-shadow: 0 0 20px rgba(255, 255, 255, 0.1); */
+}
+
+.watchlist-content-table thead tr {
+  background: linear-gradient(to right, #e01664, #f77f48);
+  /* background-color: #20cccc; */
+  /* background-color: #15eae9; */
+  color: var(--white);
+  text-align: center;
+}
+
+.watchlist-content-table th:nth-child(1) {
+  width: 300px;
+}
+
+.watchlist-content-table th:nth-child(2) {
+  width: 150px;
+}
+.watchlist-content-table th:nth-child(3) {
+  width: 130px;
+}
+
+.watchlist-content-table th,
+.watchlist-content-table td {
+  padding: 12px 15px;
+  text-align: center;
+}
+
+.watchlist-content-table tbody tr {
+  color: var(--black);
+  border-bottom: 1px solid #dddddd;
+}
+
+.watchlist-content-table tbody tr:nth-of-type(even) {
+  background-color: #f3f3f3;
+}
+.watchlist-content-table tbody tr:nth-of-type(odd) {
+  background-color: white;
+}
+
+.watchlist-content-table tbody tr:last-of-type {
+  border-bottom: 3px solid #f77f48;
+}
+
+.watchlist-content-table tbody tr td:hover {
+  font-weight: bold;
+  color: var(--black);
+}
+
+.remove-watchlist-item {
+  color: var(--white);
+  /* background: linear-gradient(to right, rgb(224, 22, 100), rgb(247, 127, 72)); */
+  background-color: var(--red);
+  border-radius: 8px;
+  padding: 8px;
+  cursor: pointer;
+  border: none;
+}
+.remove-watchlist-item:hover {
+  background-color: var(--red_hover);
+}

@@ -2,9 +2,16 @@
   --black: rgb(10, 10, 20);
   --white: #fdfffc;
   --darkBlue: #011627;
-  --green: #2ec4b6;
-  --red: #e71d36;
-  --purple: #91a6ff;
+  --green: #00b490;
+  --green_hover: #01a584;
+  --red: #e01664;
+  --red_hover: #c50101;
+  --purple: #6a85fb;
+  --purple_hover: #6077e0;
+  --border: #ecedef;
+  --black_border: #13334d;
+  --bg: #011627;
+  /* --bg: #ccf0eb; */
 }
 
 * {
@@ -12,7 +19,7 @@
   padding: 0;
   box-sizing: border-box;
   overflow-x: hidden;
-  overflow-y: hidden;
+  /* overflow-y: hidden; */
 }
 
 body {
@@ -24,6 +31,8 @@ body {
 
   height: 100vh;
   width: 100vw;
+
+  background-color: var(--bg);
 }
 
 code {
@@ -33,5 +42,19 @@ code {
 
 a {
   text-decoration: none;
-  color: black;
+  color: var(--white);
+}
+
+.img-icons {
+  height: 20px;
+  width: 20px;
+  -webkit-filter: invert(1);
+  filter: invert(1);
+  margin-right: 1rem;
+}
+
+.back-icon {
+  position: relative;
+  top: 43px;
+  left: 120px;
 }

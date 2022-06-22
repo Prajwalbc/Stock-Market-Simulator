@@ -30,7 +30,11 @@ function App() {
     <AuthContextProvider>
       <LoadingContextProvider>
         <SearchScripInfoContextProvider>
-          <ToastContainer autoClose={3000} theme="colored" />
+          <ToastContainer
+            autoClose={3000}
+            theme="colored"
+            position="bottom-right"
+          />
 
           <Router>
             <Routes>
