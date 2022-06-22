@@ -49,7 +49,7 @@ function PortfolioContent() {
         />
       </Link>
       <div className="portfolio-content-container">
-        <h1 id="header">Portfolio.</h1>
+        <h1 id="header">Portfolio</h1>
         <h3 id="balance">Balance : ₹ {balance}</h3>
         <div className="portfolio-content-table">
           <div id="thead">

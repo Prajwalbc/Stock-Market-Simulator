@@ -110,7 +110,7 @@ function StockScreenContent() {
           />
         </Link>
         <div className="stockscreen-content-container">
-          <h1>Stock Screen.</h1>
+          <h1>Stock Screen</h1>
           <h2>{scripInfo[0].scripName}</h2>
           <h4>{scripInfo[0].scripDes}</h4>
           <div className="stockscreen-btn-holder">

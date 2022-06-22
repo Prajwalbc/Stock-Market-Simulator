@@ -29,9 +29,9 @@ function SellModal({ toggleModal, item }) {
   let profitLoss = "0";
   const pl_result = item.p_current_price - item.p_bought_price;
   if (pl_result >= 0) {
-    profitLoss = "+ ₹" + pl_result;
+    profitLoss = "₹ +" + pl_result;
   } else {
-    profitLoss = "- ₹" + pl_result;
+    profitLoss = "₹ " + pl_result;
   }
 
   const sellTransaction = async (e) => {

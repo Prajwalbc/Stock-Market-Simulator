@@ -40,9 +40,10 @@ function PortfoliolistItem({ pItem }) {
       if (currentPriceLst.success === false) {
         return toast.error(currentPriceLst.message);
       }
-      const price = parseInt(
+      let price = parseInt(
         currentPriceLst.data[0].scripPrice.replace("₹ ", "").replace(",", "")
       );
+      if (isNaN(price)) price = pItem.p_bought_price;
       pItem.p_current_price = price;
       setShowSellModal(!showSellModal);
     } catch (err) {

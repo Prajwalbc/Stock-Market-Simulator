@@ -92,7 +92,7 @@ function WatchListContent() {
         />
       </Link>
       <div className="watchlist-content-container">
-        <h1>WatchList.</h1>
+        <h1>WatchList</h1>
         <button
           className="watchlist-update-prices-Btn"
           disabled={disableBtn}
