@@ -50,6 +50,6 @@ router.route("/transactions/buy").post(authorize, buyShares);
 router.route("/transactions/sell/:transactionId").post(authorize, sellShares);
 
 // portfolio
-router.route("/porfolios").get(authorize, getPortfolios);
+router.route("/portfolios").get(authorize, getPortfolios);
 
 module.exports = router;

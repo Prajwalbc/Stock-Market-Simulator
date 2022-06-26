@@ -18,7 +18,7 @@ function PortfolioContent() {
 
   const getPortfolio = async () => {
     try {
-      const portfolioRes = axios.get("http://localhost:4000/porfolios", {
+      const portfolioRes = axios.get("http://localhost:4000/portfolios", {
         headers: { jwtToken: localStorage.getItem("jwtToken") },
       });
       const parseportfolioRes = (await portfolioRes).data;
